@@ -62,6 +62,7 @@ export interface NFT extends OpenSeaAsset {
         imageUrl: string;
     };
 
+    sold: boolean;
     soldFor: string;
     onSale: boolean;
 
@@ -109,6 +110,8 @@ export interface Artist {
     websiteUrl: string;
     instagramUrl: string;
     twitterUrl: string;
+
+    priority: number; // The higher the top most
 }
 
 /**
