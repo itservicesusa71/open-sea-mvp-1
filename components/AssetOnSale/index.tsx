@@ -1,8 +1,6 @@
 import { utils } from "ethers";
 import Link from "next/link";
-import useAsset from "../../hooks/useAsset";
 import { NFTFile, OrderFromAPI } from "../../types";
-import findMaxBid from "../../utils/findMaxBid";
 import VideoPlayer from "../VideoPlayer";
 import styles from "./AssetOnSale.module.scss";
 import Countdown from "../Countdown";
@@ -74,13 +72,7 @@ const AssetOnSale: React.FC<{
                                     <div>
                                         <button>Bid Now</button>
                                     </div>
-                                    {currentBid > 0 && (
-                                        <div>
-                                            <h3>Current Bid</h3>
-                                            <p>{currentBid} ETH</p>
-                                        </div>
-                                    )}
-                                    {currentBid === 0 && (
+                                    {!salesOrder?.listing_time && (
                                         <div>
                                             <h3>Reserve price</h3>
                                             <p>{reserve} ETH</p>
