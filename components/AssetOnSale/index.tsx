@@ -73,10 +73,18 @@ const AssetOnSale: React.FC<{
                                     <div>
                                         <button>Bid Now</button>
                                     </div>
-                                    <div>
-                                        <h3>Current Bid</h3>
-                                        <p>{currentBid}</p>
-                                    </div>
+                                    {currentBid > 0 && (
+                                        <div>
+                                            <h3>Current Bid</h3>
+                                            <p>{currentBid} ETH</p>
+                                        </div>
+                                    )}
+                                    {currentBid === 0 && (
+                                        <div>
+                                            <h3>Reserve price</h3>
+                                            <p>{reserve} ETH</p>
+                                        </div>
+                                    )}
                                 </div>
                             )}
 
@@ -91,12 +99,6 @@ const AssetOnSale: React.FC<{
                                 <div>
                                     <h4>Sold for</h4>{" "}
                                     <h3>{utils.formatEther(soldFor)}</h3>
-                                </div>
-                            )}
-
-                            {reserve && !sold && (
-                                <div>
-                                    <h4>Reserve price:</h4> <h3>{reserve}</h3>
                                 </div>
                             )}
                         </div>
