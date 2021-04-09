@@ -21,7 +21,7 @@ const Signup = (): JSX.Element => {
 
     return (
         <section className={styles.signup}>
-            <h2>Log in with Metamask</h2>
+            <h2>Log in with Metamask-</h2>
             <button onClick={handleMetamask} type="submit">
                 {loading ? "Loading" : "Log in"}
             </button>
