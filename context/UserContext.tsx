@@ -40,7 +40,7 @@ export const UserContextProvider: React.FC = ({ children }) => {
     const getAddressAndProvider = async (provider: providers.Web3Provider) => {
         const signer = provider.getSigner();
         const address = await signer.getAddress();
-        const seaport = makeSeaport();
+        const seaport = makeSeaport(provider);
 
         return { address, provider, seaport };
     };
@@ -53,8 +53,12 @@ export const UserContextProvider: React.FC = ({ children }) => {
             if (active) {
                 console.log("active", active);
                 console.log("library", library);
-                const res = await getAddressAndProvider(library);
-                setUser(res);
+                try {
+                    const res = await getAddressAndProvider(library);
+                    setUser(res);
+                } catch (err) {
+                    alert(`Issue with getAddressAndProvider ${err}`);
+                }
             } else {
                 setUser(null);
             }
@@ -68,7 +72,8 @@ export const UserContextProvider: React.FC = ({ children }) => {
     const login = async (useWalletConnect?: boolean): Promise<void> => {
         try {
             if (useWalletConnect) {
-                activateWalletConnect();
+                const res = await activateWalletConnect();
+                console.log("useWalletConnect res", res);
             } else {
                 activateMetamask();
             }
