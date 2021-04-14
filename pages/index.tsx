@@ -33,7 +33,7 @@ export const Home: React.FC<{
             {assets?.length > 0 && (
                 <ActiveAuctions assets={assets} link="/auctions/0" />
             )}
-            {sold?.length > 0 && false && (
+            {sold?.length > 4 && (
                 <Auctions assets={sold} title="Sold" link="/sold/0" />
             )}
             {upcoming?.length > 0 && (
