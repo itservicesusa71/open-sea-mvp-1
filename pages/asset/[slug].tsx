@@ -62,6 +62,8 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
             }
             return order.side === 1; // Note: Unused result from find; side effect of endOfAuction is the main output
         }); // Find sell order
+
+    const hideMe_style = {display: 'none !important'};
     const currentBid = findMaxBid(assetData?.orders);
     const owner = useOwner(assetData);
 
@@ -206,7 +208,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             {asset.onSale && (
                                 <div>
                                     <h3>Auction Ends at</h3>
-                                    <p><span style="display: none !important;">{endOfAuction} vs {salesOrder?.listing_time}</span>
+                                    <p><span style={hideMe_style}>{endOfAuction} vs {salesOrder?.listing_time}</span>
                                         {endOfAuction &&
                                         asset.onSale ? (
                                             
