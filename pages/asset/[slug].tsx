@@ -56,14 +56,13 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
 
     const related = useRelatedAssets(asset);
     let endOfAuction = 0;
-    let counter = 0;
-    const salesOrder = assetData?.orders?.find((order) => {
+    assetData?.orders?.find((order) => {
             if (endOfAuction < order.listing_time){
                 endOfAuction = order.listing_time;
             }
-            counter += 1;
             return false; // Note: Unused result from find; side effect of endOfAuction is the main output
         }); // Find sell order
+    const salesOrder = assetData?.orders?.find((order) => order.side === 1);
 
     const hideMe_style = {display: 'none !important'};
     const currentBid = findMaxBid(assetData?.orders);
