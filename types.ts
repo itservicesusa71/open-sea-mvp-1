@@ -11,7 +11,7 @@ declare global {
 export interface OrderFromAPI {
     order_hash: string;
     side: number; // 0 for buy 1 for sell
-    closing_date: string; // String representing closing time (not sure of timezone)
+    closing_date: string; // String representing closing time in GMT
     listing_time: number; // Multiply by 1000 to get closing time in milliseconds
     base_price: string; // String in wei of price
     maker: {

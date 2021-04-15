@@ -55,16 +55,12 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
     const [modalOpen, setModalOpen] = useState(false);
 
     const related = useRelatedAssets(asset);
-    let endOfAuction = 0;
-    assetData?.orders?.find((order) => {
-            if (endOfAuction < order.listing_time){
-                endOfAuction = order.listing_time;
-            }
-            return false; // Note: Unused result from find; side effect of endOfAuction is the main output
-        }); // Find sell order
     const salesOrder = assetData?.orders?.find((order) => order.side === 1);
+    const endOfAuction = salesOrder?.closing_date
+        ? new Date(`${salesOrder?.closing_date}z`).getTime()
+        : null;
 
-    const hideMe_style = {display: 'none !important'};
+    const hideMeStyle = { display: "none !important" };
     const currentBid = findMaxBid(assetData?.orders);
     const owner = useOwner(assetData);
 
@@ -209,16 +205,13 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             {asset.onSale && (
                                 <div>
                                     <h3>Auction Ends at</h3>
-                                    <p><span style={hideMe_style}>{endOfAuction} vs {salesOrder?.listing_time}</span>
-                                        {endOfAuction &&
-                                        asset.onSale ? (
-                                            
-                                            <Countdown
-                                                date={
-                                                    endOfAuction *
-                                                    1000
-                                                }
-                                            />
+                                    <p>
+                                        <span style={hideMeStyle}>
+                                            {endOfAuction} vs{" "}
+                                            {salesOrder?.listing_time}
+                                        </span>
+                                        {endOfAuction && asset.onSale ? (
+                                            <Countdown date={endOfAuction} />
                                         ) : (
                                             "---"
                                         )}
