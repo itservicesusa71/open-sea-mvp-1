@@ -55,7 +55,13 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
     const [modalOpen, setModalOpen] = useState(false);
 
     const related = useRelatedAssets(asset);
-    const salesOrder = assetData?.orders?.find((order) => order.side === 1); // Find sell order
+    let endOfAuction = 0;
+    const salesOrder = assetData?.orders?.find((order) => {
+            if (endOfAuction < order.listing_time){
+                endOfAuction = order.listing_time;
+            }
+            return order.side === 1; // Note: Unused result from find; side effect of endOfAuction is the main output
+        }); // Find sell order
     const currentBid = findMaxBid(assetData?.orders);
     const owner = useOwner(assetData);
 
@@ -201,11 +207,11 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 <div>
                                     <h3>Auction Ends at</h3>
                                     <p>
-                                        {salesOrder?.listing_time &&
+                                        {endOfAuction &&
                                         asset.onSale ? (
                                             <Countdown
                                                 date={
-                                                    salesOrder?.listing_time *
+                                                    endOfAuction *
                                                     1000
                                                 }
                                             />
