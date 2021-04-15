@@ -209,7 +209,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             {asset.onSale && (
                                 <div>
                                     <h3>Auction Ends at</h3>
-                                    <p><span style={hideMe_style}>{counter}: {endOfAuction} vs {salesOrder?.listing_time}</span>
+                                    <p><span style={hideMe_style}>{endOfAuction} vs {salesOrder?.listing_time}</span>
                                         {endOfAuction &&
                                         asset.onSale ? (
                                             
