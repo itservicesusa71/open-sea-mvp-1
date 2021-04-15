@@ -56,11 +56,13 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
 
     const related = useRelatedAssets(asset);
     let endOfAuction = 0;
+    let counter = 0;
     const salesOrder = assetData?.orders?.find((order) => {
             if (endOfAuction < order.listing_time){
                 endOfAuction = order.listing_time;
             }
-            return order.side === 1; // Note: Unused result from find; side effect of endOfAuction is the main output
+            counter += 1;
+            return true; // Note: Unused result from find; side effect of endOfAuction is the main output
         }); // Find sell order
 
     const hideMe_style = {display: 'none !important'};
@@ -208,7 +210,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             {asset.onSale && (
                                 <div>
                                     <h3>Auction Ends at</h3>
-                                    <p><span style={hideMe_style}>{endOfAuction} vs {salesOrder?.listing_time}</span>
+                                    <p><span style={hideMe_style}>{counter}: {endOfAuction} vs {salesOrder?.listing_time}</span>
                                         {endOfAuction &&
                                         asset.onSale ? (
                                             
