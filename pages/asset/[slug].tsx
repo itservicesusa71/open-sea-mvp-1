@@ -62,7 +62,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                 endOfAuction = order.listing_time;
             }
             counter += 1;
-            return true; // Note: Unused result from find; side effect of endOfAuction is the main output
+            return false; // Note: Unused result from find; side effect of endOfAuction is the main output
         }); // Find sell order
 
     const hideMe_style = {display: 'none !important'};
