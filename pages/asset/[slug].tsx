@@ -122,7 +122,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                     className={styles.viewPdf}
                                     onClick={() => setShowPdfModal(true)}
                                 >
-                                    View PDF
+                                    View Gallery
                                 </button>
                             )}
                         </div>
