@@ -14,7 +14,7 @@ const getUserName = (address: string, profiles: Profile[]): string => {
     const found = profiles.find(
         (el) => el.address.toLowerCase() === address.toLowerCase(),
     );
-    return found ? found.username : address;
+    return found ? found.username : String(address).substring(0, 6);
 };
 
 const Bid: React.FC<{ buyOrder: OrderFromAPI }> = ({ buyOrder }) => {
