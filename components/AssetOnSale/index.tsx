@@ -60,7 +60,7 @@ const AssetOnSale: React.FC<{
                                 {salesOrder?.closing_date && onSale ? (
                                     <Countdown
                                         date={moment(
-                                            `${salesOrder?.closing_date}z`,
+                                            `${salesOrder?.closing_date}Z`,
                                         ).valueOf()}
                                     />
                                 ) : (
