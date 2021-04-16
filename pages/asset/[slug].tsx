@@ -226,14 +226,16 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                         )}
                         {asset.onSale && (
                             <>
-                                {user && (
-                                    <button
-                                        className={styles.bidButton}
-                                        onClick={() => setModalOpen(true)}
-                                        type="button"
-                                    >
-                                        Bid Now
-                                    </button>
+                                {user && (<>
+                                        <button
+                                            className={styles.bidButton}
+                                            onClick={() => setModalOpen(true)}
+                                            type="button"
+                                        >
+                                            Bid Now
+                                        </button>
+                                        <p>A new high bid placed under 10 minutes will extend the auction by 10 minutes</p>
+                                    </>
                                 )}
 
                                 {!user && (
