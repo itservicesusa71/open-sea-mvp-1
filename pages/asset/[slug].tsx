@@ -234,7 +234,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                         >
                                             Bid Now
                                         </button>
-                                        <p>A new high bid placed under 10 minutes will extend the auction by 10 minutes</p>
+                                        <p>A new high bid placed under 10 minutes will extend the auction by 10 minutes </p>
                                         <br></br>
                                     </>
                                 )}
