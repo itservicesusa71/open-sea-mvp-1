@@ -56,9 +56,11 @@ const AssetOnSale: React.FC<{
                         <div className={styles.ends}>
                             <h3>Auction Ends at</h3>
                             <p>
-                                {salesOrder?.listing_time && onSale ? (
+                                {salesOrder?.closing_date && onSale ? (
                                     <Countdown
-                                        date={salesOrder?.listing_time * 1000}
+                                        date={new Date(
+                                            `${salesOrder?.closing_date}z`,
+                                        ).getTime()}
                                     />
                                 ) : (
                                     "---"
