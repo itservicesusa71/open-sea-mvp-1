@@ -18,7 +18,7 @@ const PDFViewer: React.FC<{ file: string }> = ({ file }) => {
         }
     };
     const prevPage = () => {
-        if (pageNumber - 1 >= 0) {
+        if (pageNumber - 1 > 0) {
             setPageNumber(pageNumber - 1);
         }
     };
