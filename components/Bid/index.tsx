@@ -1,4 +1,5 @@
 import { utils } from "ethers";
+import moment from "moment";
 import React from "react";
 import { useProfiles } from "../../context/SiteProfilesContext";
 import { OrderFromAPI, Profile } from "../../types";
@@ -18,7 +19,7 @@ const getUserName = (address: string, profiles: Profile[]): string => {
 };
 
 const Bid: React.FC<{ buyOrder: OrderFromAPI }> = ({ buyOrder }) => {
-    const date = new Date(
+    const date = moment(
         Number(buyOrder.listing_time.toString()) * 1000,
     ).toISOString();
     const profiles = useProfiles();

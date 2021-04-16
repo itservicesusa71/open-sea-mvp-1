@@ -1,13 +1,25 @@
+import moment from "moment";
+import { useEffect, useState } from "react";
 import { ensureTwoDigits } from "../../utils/format";
 
 const CountdownComponent: React.FC<{ date: number }> = ({ date }) => {
-    const timeLeft = date - new Date().getTime();
+    const [timeLeft, setTimeLeft] = useState<number | null>(null);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTimeLeft(date - moment().valueOf());
+        }, 1000);
+        return () => clearInterval(interval);
+    }, [date]);
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
         (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
     );
     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    if (!timeLeft) {
+        return <span>---</span>;
+    }
 
     if (timeLeft <= 0) {
         // Render a completed state
@@ -24,7 +36,7 @@ const CountdownComponent: React.FC<{ date: number }> = ({ date }) => {
 
     return (
         <span>
-            {ensureTwoDigits(hours)}h {ensureTwoDigits(minutes)}min
+            {ensureTwoDigits(hours)}h {ensureTwoDigits(minutes)}min{" "}
             {ensureTwoDigits(seconds)}s
         </span>
     );
