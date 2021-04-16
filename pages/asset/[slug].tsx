@@ -206,10 +206,6 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 <div>
                                     <h3>Auction Ends at</h3>
                                     <p>
-                                        <span style={hideMeStyle}>
-                                            {endOfAuction} vs{" "}
-                                            {salesOrder?.listing_time}
-                                        </span>
                                         {endOfAuction && asset.onSale ? (
                                             <Countdown date={endOfAuction} />
                                         ) : (
@@ -226,7 +222,8 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                         )}
                         {asset.onSale && (
                             <>
-                                {user && (<>
+                                {user && (
+                                    <>
                                         <button
                                             className={styles.bidButton}
                                             onClick={() => setModalOpen(true)}
@@ -234,8 +231,12 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                         >
                                             Bid Now
                                         </button>
-                                        <p>A new high bid placed under 10 minutes will extend the auction by 10 minutes </p>
-                                        <br></br>
+                                        <p>
+                                            A new high bid placed under 10
+                                            minutes will extend the auction by
+                                            10 minutes{" "}
+                                        </p>
+                                        <br />
                                     </>
                                 )}
 
