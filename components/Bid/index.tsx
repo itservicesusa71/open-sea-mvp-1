@@ -46,6 +46,8 @@ const LastSale: React.FC<{ asset: any }> = ({ asset })=>{
         last_sale.event_timestamp
     ).toISOString();
     const profiles = useProfiles();
+    return null
+    /*
     return (
         <div className={styles.bid}>
             <div>
@@ -61,6 +63,7 @@ const LastSale: React.FC<{ asset: any }> = ({ asset })=>{
             </p>
         </div>
     )
+    */
 }
 
 
