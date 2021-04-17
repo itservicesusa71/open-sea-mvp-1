@@ -39,4 +39,30 @@ const Bid: React.FC<{ buyOrder: OrderFromAPI }> = ({ buyOrder }) => {
     );
 };
 
+const LastSale: React.FC<{}> = ({ asset })=>{
+    const date = new Date(
+        asset.last_sale.event_timestamp
+    ).toISOString();
+    const profiles = useProfiles();
+    return (
+        <div className={styles.bid}>
+            <div>
+                <p className={styles.bidder}>
+                    Bid Placed by{" "}
+                    {getUserName(asset.final_sale.transaction.to_account.address, profiles)}
+                </p>
+                <p className={styles.date}>at {date}</p>
+            </div>
+
+            <p className={styles.price}>
+                {utils.formatEther(asset.last_sale.total_price.toString())} ETH
+            </p>
+        </div>
+    )
+}
+
+
 export default Bid;
+export {
+    LastSale
+}
