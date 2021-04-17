@@ -45,6 +45,8 @@ const LastSale: React.FC<{ asset: any }> = ({ asset })=>{
     const date = new Date(
         last_sale.event_timestamp
     ).toISOString();
+    console.log("Last Sale:",last_sale);
+    console.log("date:", date);
     const profiles = useProfiles();
     return null
     /*
