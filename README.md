@@ -7,6 +7,7 @@ This is the one
 
 Hands down the simplest and easiest framework to build production ready React Apps
 
+
 ## Magic
 
 Easy access to login, authentication, session management, ethereum wallets
