@@ -8,6 +8,9 @@ const Orders: React.FC<{
     asset: AssetFromAPI;
 }> = ({ asset }) => {
     const lastSale = asset?.last_sale
+
+    console.log("asset:", asset);
+    console.log("last sale:", lastSale);
     const buyOrders = asset?.orders
         ? asset.orders.filter((order) => order.side === 0)
         : [];
