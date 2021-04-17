@@ -56,8 +56,6 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
 
     const related = useRelatedAssets(asset);
 
-    console.log("asset:",asset)
-
     const salesOrder = assetData?.orders?.find((order) => order.side === 1);
     const endOfAuction = salesOrder?.closing_date
         ? new Date(`${salesOrder?.closing_date}z`).getTime()
