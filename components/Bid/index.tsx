@@ -45,27 +45,30 @@ const LastSale: React.FC<{ asset: any }> = ({ asset })=>{
     const date = new Date(
         last_sale.event_timestamp
     ).toISOString();
+    const address = last_sale.transaction.to_account.address;
+    const price = last_sale.total_price;
     console.log("Last Sale:",last_sale);
     console.log("date:", date);
+    console.log("address:", address);
+    console.log("price:", price);
+
     const profiles = useProfiles();
-    return null
-    /*
+    // return null
     return (
         <div className={styles.bid}>
             <div>
                 <p className={styles.bidder}>
                     Bid Placed by{" "}
-                    {getUserName(last_sale.transaction.to_account.address, profiles)}
+                    {getUserName(address, profiles)}
                 </p>
                 <p className={styles.date}>at {date}</p>
             </div>
 
             <p className={styles.price}>
-                {utils.formatEther(last_sale.total_price.toString())} ETH
+                {utils.formatEther(price.toString())} ETH
             </p>
         </div>
     )
-    */
 }
 
 
