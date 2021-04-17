@@ -56,6 +56,9 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
     const [modalOpen, setModalOpen] = useState(false);
 
     const related = useRelatedAssets(asset);
+
+    console.log("asset:",asset)
+
     const salesOrder = assetData?.orders?.find((order) => order.side === 1);
     const endOfAuction = salesOrder?.closing_date
         ? moment(`${salesOrder?.closing_date}Z`).valueOf()
@@ -256,6 +259,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
 
                         {modalOpen && (
                             <OrderModal
+                                lastSale={assetData?.lastSale || null}
                                 buyOrders={assetData?.orders || []}
                                 handleClose={() => {
                                     setModalOpen(false);
