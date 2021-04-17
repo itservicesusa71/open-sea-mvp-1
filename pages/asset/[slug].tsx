@@ -258,7 +258,6 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
 
                         {modalOpen && (
                             <OrderModal
-                                lastSale={assetData?.lastSale || null}
                                 buyOrders={assetData?.orders || []}
                                 handleClose={() => {
                                     setModalOpen(false);
