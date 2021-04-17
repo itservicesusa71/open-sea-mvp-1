@@ -40,7 +40,7 @@ const Bid: React.FC<{ buyOrder: OrderFromAPI }> = ({ buyOrder }) => {
     );
 };
 
-const LastSale: React.FC<{}> = ({ asset })=>{
+const LastSale: React.FC<{ asset: any }> = ({ asset })=>{
     const date = new Date(
         asset.last_sale.event_timestamp
     ).toISOString();
