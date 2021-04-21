@@ -65,7 +65,8 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
         : null;
 
     const hideMeStyle = { display: "none !important" };
-    const currentBid = findMaxBid(assetData?.orders);
+    const maxBid = findMaxBid(assetData?.orders);
+    const currentBid = maxBid >= Number(asset.reserve) ? maxBid : 0;
     const owner = useOwner(assetData);
 
     const router = useRouter();
