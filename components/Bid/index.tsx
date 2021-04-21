@@ -40,14 +40,12 @@ const Bid: React.FC<{ buyOrder: OrderFromAPI }> = ({ buyOrder }) => {
     );
 };
 
-const LastSale: React.FC<{ asset: any }> = ({ asset })=>{
-    const last_sale = asset.last_sale;
-    const date = new Date(
-        last_sale.event_timestamp
-    ).toISOString();
-    const address = last_sale.transaction.to_account.address;
-    const price = last_sale.total_price;
-    console.log("Last Sale:",last_sale);
+const LastSale: React.FC<{ asset: any }> = ({ asset }) => {
+    const { last_sale: lastSale } = asset;
+    const date = new Date(lastSale.event_timestamp).toISOString();
+    const { address } = lastSale.transaction.to_account;
+    const price = lastSale.total_price;
+    console.log("Last Sale:", lastSale);
     console.log("date:", date);
     console.log("address:", address);
     console.log("price:", price);
@@ -58,8 +56,7 @@ const LastSale: React.FC<{ asset: any }> = ({ asset })=>{
         <div className={styles.bid}>
             <div>
                 <p className={styles.bidder}>
-                    Bid Placed by{" "}
-                    {getUserName(address, profiles)}
+                    Bid Placed by {getUserName(address, profiles)}
                 </p>
                 <p className={styles.date}>at {date}</p>
             </div>
@@ -68,11 +65,8 @@ const LastSale: React.FC<{ asset: any }> = ({ asset })=>{
                 {utils.formatEther(price.toString())} ETH
             </p>
         </div>
-    )
-}
-
+    );
+};
 
 export default Bid;
-export {
-    LastSale
-}
+export { LastSale };

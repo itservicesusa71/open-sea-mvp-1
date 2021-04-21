@@ -34,7 +34,8 @@ const OrderModal: React.FC<{
     buyOrders: OrderFromAPI[];
     address: string;
     tokenId: string;
-}> = ({ handleClose, buyOrders, address, tokenId }) => (
+    reserve: string;
+}> = ({ handleClose, buyOrders, address, tokenId, reserve }) => (
     <Modal handleClose={handleClose}>
         <BuyWidgetNoSsr
             handleClose={handleClose}
@@ -42,6 +43,7 @@ const OrderModal: React.FC<{
             sellOrders={[]}
             address={address}
             tokenId={tokenId}
+            reserve={reserve}
         />
     </Modal>
 );
@@ -264,6 +266,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 }}
                                 address={asset.address}
                                 tokenId={asset.tokenId}
+                                reserve={asset.reserve}
                             />
                         )}
                     </div>
