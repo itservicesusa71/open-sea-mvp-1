@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
-// import moment from "moment";
+import moment from "moment";
 import { API_URL } from "../../utils/constants";
 import { NFT, OrderFromAPI } from "../../types";
 
