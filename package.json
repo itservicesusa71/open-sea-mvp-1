@@ -19,18 +19,6 @@
         "test": "jest",
         "test-all": "yarn lint && yarn type-check && yarn test"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged",
-            "pre-push": "yarn run type-check"
-        }
-    },
-    "lint-staged": {
-        "*.@(ts|tsx)": [
-            "yarn lint",
-            "yarn format"
-        ]
-    },
     "dependencies": {
         "@web3-react/core": "^6.1.9",
         "@web3-react/injected-connector": "^6.0.7",
@@ -39,6 +27,7 @@
         "ethers": "^5.0.31",
         "hls.js": "^0.14.17",
         "lodash.groupby": "^4.6.0",
+        "moment": "^2.29.1",
         "next": "latest",
         "opensea-js": "^1.1.10",
         "react": "^17.0.1",
