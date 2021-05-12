@@ -15,7 +15,7 @@ import Auctions from "../components/Auctions";
 import ActiveAuctions from "../components/ActiveAuctions";
 import Slider from "../components/Slider";
 import HeadWithImage from "../components/HeadWithImage";
-
+// index page start
 export const Home: React.FC<{
     assets: NFT[];
     sold: NFT[];
@@ -33,7 +33,7 @@ export const Home: React.FC<{
             {assets?.length > 0 && (
                 <ActiveAuctions assets={assets} link="/auctions/0" />
             )}
-            {sold?.length > 0 && (
+            {sold?.length > 2 && (
                 <Auctions assets={sold} title="Sold" link="/sold/0" />
             )}
             {upcoming?.length > 0 && (
