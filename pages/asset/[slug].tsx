@@ -43,6 +43,7 @@ const OrderModal: React.FC<{
             sellOrders={[]}
             address={address}
             tokenId={tokenId}
+            // reserve={reserve}
         />
     </Modal>
 );
