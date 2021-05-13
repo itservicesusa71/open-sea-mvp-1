@@ -18,45 +18,45 @@ export const PegzPage: React.FC<{}> = () => {
                             </td>
                             <td>
                                 <div className={styles.nftItem}><iframe src="https://streamable.com/e/e9hkir?autoplay=1&nocontrols=1" width="100%" height="100%" allow="autoplay" className={styles.nftIframe}></iframe></div>
-                                {/* <div className={styles.centerItem}><img src="/images/pegz/02sherher_icon133.png" width="18%" /></div> */}
+                                <div className={styles.centerItem}><img src="/images/pegz/02sherher_icon133.png" width="18%" /></div>
                             </td>
                             <td>
                                 <div className={styles.nftItem}><iframe src="https://streamable.com/e/v9pq1c?autoplay=1&nocontrols=1" width="100%" height="100%" allow="autoplay" className={styles.nftIframe}></iframe></div>
-                                {/* <div className={styles.centerItem}><img src="/images/pegz/03smiler_icon133.png" width="18%" /></div> */}
+                                <div className={styles.centerItem}><img src="/images/pegz/03smiler_icon133.png" width="18%" /></div>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <div className={styles.nftItem}><iframe src="https://streamable.com/e/nh0bjz?autoplay=1&nocontrols=1" width="100%" height="100%" allow="autoplay" className={styles.nftIframe}></iframe></div>
-                                {/* <div className={styles.centerItem}><img src="/images/pegz/04stoner_icon133.png" width="18%" /></div> */}
+                                <div className={styles.centerItem}><img src="/images/pegz/04stoner_icon133.png" width="18%" /></div>
                             </td>
                             <td>
                                 <div className={styles.nftItem}><iframe src="https://streamable.com/e/hzo3y7?autoplay=1&nocontrols=1" width="100%" height="100%" allow="autoplay" className={styles.nftIframe}></iframe></div>
-                                {/* <div className={styles.centerItem}><img src="/images/pegz/05bootlegger_icon133.png" width="18%" /></div> */}
+                                <div className={styles.centerItem}><img src="/images/pegz/05bootlegger_icon133.png" width="18%" /></div>
                             </td>
                             <td>
                                 <div className={styles.nftItem}><iframe src="https://streamable.com/e/88mojs?autoplay=1&nocontrols=1" width="100%" height="100%" allow="autoplay" className={styles.nftIframe}></iframe></div>
-                                {/* <div className={styles.centerItem}><img src="/images/pegz/06muncher_icon133.png" width="18%" /></div> */}
+                                <div className={styles.centerItem}><img src="/images/pegz/06muncher_icon133.png" width="18%" /></div>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <div className={styles.nftItem}><iframe src="https://streamable.com/e/0592ol?autoplay=1&nocontrols=1" width="100%" height="100%" allow="autoplay" className={styles.nftIframe}></iframe></div>
-                                {/* <div className={styles.centerItem}><img src="https://streamable.com/e/07pecker_icon133.png" width="18%" /></div> */}
+                                <div className={styles.centerItem}><img src="/images/pegz/07pecker_icon133.png" width="18%" /></div>
                             </td>
                             <td>
                                 <div className={styles.nftItem}><iframe src="https://streamable.com/e/ij7jaa?autoplay=1&nocontrols=1" width="100%" height="100%" allow="autoplay" className={styles.nftIframe}></iframe></div>
-                                {/* <div className={styles.centerItem}><img src="https://streamable.com/e/08slimer_icon133.png" width="18%" /></div> */}
+                                <div className={styles.centerItem}><img src="/images/pegz/08slimer_icon133.png" width="18%" /></div>
                             </td>
                             <td>
                                 <div className={styles.nftItem}><iframe src="https://streamable.com/e/q3mxv4?autoplay=1&nocontrols=1" width="100%" height="100%" allow="autoplay" className={styles.nftIframe}></iframe></div>
-                                {/* <div className={styles.centerItem}><img src="https://streamable.com/e/09licker_icon133.png" width="18%" /></div> */}
+                                <div className={styles.centerItem}><img src="/images/pegz/09licker_icon133.png" width="18%" /></div>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <div className={styles.nftItem}><iframe src="https://streamable.com/e/jcwhos?autoplay=1&nocontrols=1" width="100%" height="100%" allow="autoplay" className={styles.nftIframe}></iframe></div>
-                                {/* <div className={styles.centerItem}><img src="https://streamable.com/e/10peper_icon133.png" width="18%" /></div> */}
+                                <div className={styles.centerItem}><img src="/images/pegz/10peper_icon133.png" width="18%" /></div>
                             </td>
                         </tr>
                     </table>
