@@ -33,12 +33,12 @@ export const Home: React.FC<{
                     </Link>
                 )}
                 {pageNumber > 1 && (
-                    <Link href={`/page/${pageNumber - 1}`}>
+                    <Link href={`/auctions/${pageNumber - 1}`}>
                         <a>Prev Page</a>
                     </Link>
                 )}
                 {hasMore && (
-                    <Link href={`/page/${pageNumber + 1}`}>
+                    <Link href={`/auctions/${pageNumber + 1}`}>
                         <a>Next Page</a>
                     </Link>
                 )}
