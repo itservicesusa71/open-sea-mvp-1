@@ -5,6 +5,15 @@
     margin: auto;
     padding: 0 60px;
 
+    .pageLink {
+        text-align: center;
+    
+        margin: 46px 18px 42px 2px;
+        a {
+            margin: 0 40px;
+        }
+    }
+
     @media screen and (max-width: 778px) {
         max-width: 100%;
         padding: 0 18px;
