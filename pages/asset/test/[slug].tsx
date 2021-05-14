@@ -60,7 +60,6 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
         asset.tokenId,
     );
 
-    
     const [modalOpen, setModalOpen] = useState(false);
 
     const related = useRelatedAssets(asset);
@@ -106,9 +105,9 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             </button>
                             <div className={styles.imageContainer}>
                                 <ModelViewer src="/images/scene.glb" />
-                                <button><span className={styles.singleAssetText}>01</span><input className={styles.singleAssetImage} type="image" src="/images/pegz/01creeper_icon133.png" /><span className={styles.singleAssetText}>creeper</span></button>
+                                <a type="button"><span className={styles.singleAssetText}>01</span><input className={styles.singleAssetImage} type="image" src="/images/pegz/creeper.png" /></a>
                             </div>
-                            <button
+                            {/* <button
                                 type="button"
                                 className={styles.fullScreen}
                                 onClick={
@@ -118,7 +117,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 }
                             >
                                 {handle.active ? "Close" : "FullScreen"}
-                            </button>
+                            </button> */}
                             <div />
                         </div>
                     </div>

@@ -8,17 +8,17 @@ const Layout: React.FC = ({ children }) => {
     const router = useRouter();
     const isLanding =
         router.pathname.includes("login") ||
+        router.pathname.includes("pegz") ||
         router.pathname.includes("onboarding");
 
-    const isPegz =
-        router.pathname.includes("") ||
-        router.pathname.includes("pegz");
+    const isPegz = 
+        router.pathname == "/";
 
     return (
         <div className={styles.layout}>
             {isLanding && <LandingHeader />}
-            {(!isPegz && !isLanding) && <Header />}
-
+            {(!isLanding && !isPegz) && <Header />}
+            
             {children}
             {!isPegz && <Footer />}
         </div>

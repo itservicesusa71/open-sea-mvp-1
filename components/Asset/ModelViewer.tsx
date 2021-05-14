@@ -16,6 +16,9 @@ const ModelViewer: React.FC<{
         alt="A 3D model of an astronaut"
         auto-rotate
         camera-controls
+        // camera-orbit="calc(1.5rad + env(window-scroll-y) * 2rad) calc(0deg + env(window-scroll-y) * 160deg) calc(1m - env(window-scroll-y) * 1.5m)" 
+        camera-orbit="90deg 90deg"
+        ar-status
     />
 );
 

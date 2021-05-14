@@ -212,6 +212,7 @@
         max-width: 100%;
         width: 625.6px;
         padding: 20px;
+
         .centerItem {
             text-align: center;
         }
@@ -220,7 +221,9 @@
             margin-bottom: 20px;
         }
     }
-
+    .right * {
+        font-family: "Comic Sans MS","Comic Sans","Chalkboard","ChalkboardSE-Regular",sans-serif !important;
+    }
     .relatedGrid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -272,7 +275,7 @@
         float: left;
         height: 100vh;
         overflow-y: scroll;
-
+        background: #fff;
     }
 }
 
