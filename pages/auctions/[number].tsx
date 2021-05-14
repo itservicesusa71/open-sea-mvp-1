@@ -47,6 +47,7 @@ export const Home: React.FC<{
     );
 };
 
+
 export default Home;
 
 export async function getStaticPaths() {
