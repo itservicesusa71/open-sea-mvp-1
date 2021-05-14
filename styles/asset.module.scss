@@ -81,12 +81,14 @@
                 // 79 186 padding top and bottom
                 // 73 padding top container below - 13 px = 60
                 height: calc(100vh - 89.5px - 79px - 186px - 60px);
+                max-height: calc(100vh - 89.5px - 79px - 186px - 60px);
             }
 
             &.active {
                 img,
                 video {
                     height: calc(75vh);
+                    max-height: calc(75vh);
                 }
             }
         }
