@@ -58,11 +58,14 @@ const useEnrichedAssetsData = (assets: NFT[]) => {
 
                 await Promise.all(
                     addresses.map(async (tokenAddress) => {
-                        const fromThisBatch = await tokensFromOpenSea(
-                            tokenAddress,
-                            allPossibilities[tokenAddress],
-                        );
-                        enrichedAssets = enrichedAssets.concat(fromThisBatch);
+                        if(tokenAddress != "null") {
+                            console.log(tokenAddress, "token address list")
+                            const fromThisBatch = await tokensFromOpenSea(
+                                tokenAddress,
+                                allPossibilities[tokenAddress],
+                            );
+                            enrichedAssets = enrichedAssets.concat(fromThisBatch);
+                        }
                     }),
                 );
 
@@ -70,28 +73,33 @@ const useEnrichedAssetsData = (assets: NFT[]) => {
 
                 const mergedAssets = assets.map((token) => {
                     // Find order // Find amx bid
+                    // console.log(token.address, "token.address")
+                    let token_address = token.address;
+                    if(token.address == null)
+                        token_address = "token.address"
+
                     try {
-                        const assetData = enrichedAssets.find(
-                            (asset) =>
-                                token.address.toLowerCase() ===
-                                    asset.asset_contract.address.toLowerCase() &&
-                                token.tokenId === asset.token_id,
-                        );
+                            const assetData = enrichedAssets.find(
+                                (asset) =>
+                                    token_address.toLowerCase() ===
+                                        asset.asset_contract.address.toLowerCase() &&
+                                    token.tokenId === asset.token_id,
+                            );
 
-                        console.log("assetData", assetData);
+                            // console.log("assetData", assetData);
 
-                        const salesOrder = assetData?.sell_orders?.[0];
-                        const currentBid = findMaxBid([assetData?.top_bid]);
+                            const salesOrder = assetData?.sell_orders?.[0];
+                            const currentBid = findMaxBid([assetData?.top_bid]);
 
-                        return { ...token, salesOrder, currentBid };
-                    } catch (err) {
-                        console.log("Exception in mergin", err);
-                        return {
-                            ...token,
-                            salesOrder: undefined,
-                            currentBid: undefined,
-                        };
-                    }
+                            return { ...token, salesOrder, currentBid };
+                        } catch (err) {
+                            console.log("Exception in mergin", err);
+                            return {
+                                ...token,
+                                salesOrder: undefined,
+                                currentBid: undefined,
+                            };
+                        }
                 });
 
                 setUpdatedAssets(mergedAssets);
