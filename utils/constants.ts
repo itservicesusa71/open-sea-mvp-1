@@ -23,4 +23,4 @@ export const AVAILABLE_TOKENS_QUERY =
 
 export const SOLD_TOKENS_QUERY = "sold=true&_sort=priority:DESC";
 
-export const WHITEHOT_TOKENS_QUERY = "whitehot=1&onSale=true&sold=false&_sort=priority:DESC";
+export const WHITEHOT_TOKENS_QUERY = "whitehot=true&onSale=true&sold=false&_sort=priority:DESC";

@@ -49,6 +49,9 @@ const OrderModal: React.FC<{
 );
 
 const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
+
+    console.log(asset, "asset")
+    
     const [showPdfModal, setShowPdfModal] = useState(false);
     const user = useUser();
     const { asset: assetData, fetchAsset } = useAsset(
@@ -102,12 +105,20 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                     handle.active ? styles.active : ""
                                 }`}
                             >
+                            
                                 {asset?.file &&
-                                    asset?.file?.type === "video" && (
+                                    asset?.file?.type === "video" && asset.slug == "terreno" && (
+                                        <video width="320" height="240" controls poster={`https://image.mux.com/${asset?.file?.link}/thumbnail.png`}>
+                                            <source src={`https://stream.mux.com/${asset?.file?.link}.m3u8`} type="application/x-mpegURL" />
+                                        </video>
+                                )}
+                                
+                                {asset?.file &&
+                                    asset?.file?.type === "video" && asset.slug != "terreno" && (
                                         <VideoPlayer
                                             playbackId={asset?.file?.link}
                                         />
-                                    )}
+                                )}
 
                                 {!(
                                     asset?.file && asset?.file?.type === "video"

@@ -30,19 +30,16 @@ export const Home: React.FC<{
             </Head>
             <HeadWithImage />
             <Slider slides={slides} />
-            {(assets?.length > 0 || upcoming?.length > 2) && (
-                <ActiveAuctions assets={assets} link="/auctions/0" />
+            {(assets?.length > 0) && (
+                <Auctions assets={assets} title="Lorem Ipsum" link="/whitehot/0" />
             )}
-            {sold?.length > 2 && (
-                <Auctions assets={sold} title="Sold" link="/sold/0" />
-            )}
-            {/* {upcoming?.length > 0 && (
+            {upcoming?.length > 0 && (
                 <Auctions
                     assets={upcoming}
                     title="Upcoming"
                     link="/upcoming/0"
                 />
-            )} */}
+            )}
         </div>
     );
 };
@@ -55,6 +52,12 @@ export async function getStaticProps() {
         `${API_URL}/tokens?_limit=${WHITEHOT_TOKENS_IN_HOME}&${WHITEHOT_TOKENS_QUERY}`,
     );
     const whiteTokens = await whtieTokenRes.json();
+
+    /** Get tokens not on sale and not sold */
+    const upcomingTokensRes = await fetch(
+        `${API_URL}/tokens?_limit=${UPCOMING_TOKENS_IN_HOME}&${UPCOMING_TOKENS_QUERY}`,
+    );
+    const upcoming = await upcomingTokensRes.json();
 
     /** Get slides */
     let slides = [];
@@ -69,6 +72,7 @@ export async function getStaticProps() {
     return {
         props: {
             assets: whiteTokens,
+            upcoming,
             slides,
         },
     };
