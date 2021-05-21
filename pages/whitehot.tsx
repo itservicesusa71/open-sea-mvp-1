@@ -28,7 +28,7 @@ export const Home: React.FC<{
             <HeadWithImage />
             {/* <Slider slides={slides} /> */}
             <div className={styles.centerItem}>
-                <h2>nbsp;</h2>
+                <h2>&nbsp;</h2>
                 <h2>Whitehot Magazine NFT Auction</h2>
                 <h2>Curated by Noah Becker</h2>
             </div>
