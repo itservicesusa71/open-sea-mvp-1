@@ -19,6 +19,7 @@ import VideoPlayer from "../../components/VideoPlayer";
 import HeadWithImage from "../../components/HeadWithImage";
 import MarkdownRenderer from "../../components/MarkdownRenderer";
 
+
 const BuyWidgetNoSsr = dynamic(() => import("../../components/BuyWidget"), {
     ssr: false,
 });

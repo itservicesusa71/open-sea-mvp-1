@@ -13,12 +13,13 @@ const Slider: React.FC<{ slides: Slide[] }> = ({ slides }) => {
             <Link href={`${slide.url}`}>
                 <a>
                     <div className={styles.slider}>
-                        <div
+                        <img className={styles.sliderImage} src={slide.imageUrl} />
+                        {/* <div
                             className={styles.bg}
                             style={{
                                 backgroundImage: `url(${slide.imageUrl})`,
                             }}
-                        />
+                        /> */}
                     </div>
                 </a>
             </Link>
