@@ -19,6 +19,7 @@ import VideoPlayer from "../../components/VideoPlayer";
 import HeadWithImage from "../../components/HeadWithImage";
 import MarkdownRenderer from "../../components/MarkdownRenderer";
 
+import ReactPlayer from 'react-player'
 
 const BuyWidgetNoSsr = dynamic(() => import("../../components/BuyWidget"), {
     ssr: false,
@@ -51,7 +52,7 @@ const OrderModal: React.FC<{
 
 const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
 
-    console.log(asset, "asset")
+    // console.log(asset, "asset")
 
     const [showPdfModal, setShowPdfModal] = useState(false);
     const user = useUser();
@@ -101,17 +102,25 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             <img src="/images/back-arrow.svg" alt="Back" />
                         </button>
                         <div className={styles.imageContainer}>
+
+                            
                             <span
                                 className={`${styles.image} ${
                                     handle.active ? styles.active : ""
                                 }`}
                             >
-                            
                                 {asset?.file &&
                                     asset?.file?.type === "video" && asset.slug == "terreno" && (
-                                        <video width="320" height="240" controls poster={`https://image.mux.com/${asset?.file?.link}/thumbnail.png`}>
-                                            <source src={`https://stream.mux.com/${asset?.file?.link}.m3u8`} type="application/x-mpegURL" />
-                                        </video>
+                                        <ReactPlayer url={`https://stream.mux.com/${asset?.file?.link}.m3u8`} 
+                                            playing
+                                            width='100%'
+                                            controls
+                                            config={{
+                                            file: {
+                                                forceHLS: true,
+                                                }
+                                            }}
+                                        />
                                 )}
                                 
                                 {asset?.file &&
