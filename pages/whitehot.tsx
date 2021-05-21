@@ -28,10 +28,10 @@ export const Home: React.FC<{
             <HeadWithImage />
             {/* <Slider slides={slides} /> */}
             <div className={styles.centerItem}>
-                <h2>Lorem Ipsum</h2>
+                <h2>Whitehot Auctions</h2>
             </div>
             {(assets?.length > 0) && (
-                <Auctions assets={assets} title="Lorem Ipsum" link="/whitehot/0" />
+                <Auctions assets={assets} title="Whitehot Magazine" link="/whitehot/0" />
             )}
             {/* {upcoming?.length > 0 && (
                 <Auctions
