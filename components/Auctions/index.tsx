@@ -23,8 +23,7 @@ const Auctions: React.FC<{
         <main className={styles.auctions}>
             <div className={styles.headline}>
                 <div className={styles.title}>
-                    {/* <img alt="Live Auctions" src={fromTitleToImageUrl(title)} /> */}
-                    <p>{title}</p>
+                    <img alt="Live Auctions" src={fromTitleToImageUrl(title)} />
                 </div>
                 <div className={styles.divider}>
                     <hr />
