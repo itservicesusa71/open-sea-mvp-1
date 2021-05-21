@@ -5,8 +5,10 @@
 .slider {
     position: relative;
 
-    height: 282px;
-
+    // height: 282px;
+    .sliderImage {
+        width: 100%;
+    }
     .bg {
         position: absolute;
         top: 0;
@@ -68,6 +70,9 @@
 }
 
 @include media-mobile-only {
+    .sliderImage {
+        padding: 0 20px;
+    }
     .sliderContainer {
         margin: 0;
     }
