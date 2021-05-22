@@ -19,9 +19,7 @@ import VideoPlayer from "../../components/VideoPlayer";
 import HeadWithImage from "../../components/HeadWithImage";
 import MarkdownRenderer from "../../components/MarkdownRenderer";
 
-// import HlsVideoViewer from '../../components/Asset/HlsViewer';
 import ReactPlayer from 'react-player'
-
 
 const BuyWidgetNoSsr = dynamic(() => import("../../components/BuyWidget"), {
     ssr: false,
