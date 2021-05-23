@@ -101,8 +101,8 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                         >
                             <img src="/images/back-arrow.svg" alt="Back" />
                         </button>
-                        <div className={styles.imageContainer}>
 
+                        <div className={styles.imageContainer}>
                             
                             <span
                                 className={`${styles.image} ${
@@ -111,13 +111,16 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             >
                                 {asset?.file &&
                                     asset?.file?.type === "video" && asset.slug == "terreno" && (
-                                        <ReactPlayer url={`https://stream.mux.com/${asset?.file?.link}.m3u8`} 
-                                            playing
-                                            width='100%'
+                                        <ReactPlayer className={styles.ReactPlayer} url={`https://stream.mux.com/${asset?.file?.link}.m3u8`} 
+                                            playsInline
+                                            width='initial'
+                                            height='100%'
+                                            poster={ `https://image.mux.com/${asset?.file?.link}/thumbnail.png` }
                                             controls
+                                            // fluid='false'
                                             config={{
-                                            file: {
-                                                forceHLS: true,
+                                                file: {
+                                                    forceHLS: true,
                                                 }
                                             }}
                                         />
