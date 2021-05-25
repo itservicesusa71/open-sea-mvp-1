@@ -85,6 +85,13 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                 imageUrl={asset.imageUrl}
             />
 
+            <div className={styles.pegzImageDivMobile}>
+                <img className={styles.pegzImage} src="/images/pegz/pegz.jpg" />
+                <div>
+                    <span className={styles.name}>Name: {asset.name}</span>
+                </div>
+            </div>
+
             <section className={styles.nft_preview}>
                 <FullScreen handle={handle}>
                     <div className={styles.masthead}>
@@ -105,7 +112,9 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             </button>
                             <div className={styles.imageContainer}>
                                 <ModelViewer src="/images/scene.glb" />
-                                <a type="button"><span className={styles.singleAssetText}>01</span><input className={styles.singleAssetImage} type="image" src="/images/pegz/creeper.png" /></a>
+                                <a type="button"><span className={styles.singleAssetText}>01</span>
+                                    <img className={styles.singleAssetImage} src="/images/pegz/creeper.png" />
+                                </a>
                             </div>
                             {/* <button
                                 type="button"
@@ -118,7 +127,6 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             >
                                 {handle.active ? "Close" : "FullScreen"}
                             </button> */}
-                            <div />
                         </div>
                     </div>
                 </FullScreen>
@@ -157,11 +165,10 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                         </div> */}
                     </div>
                     <div className={styles.right}>
-                        <div className={styles.centerItem}>
+                        <div className={styles.pegzImageDiv}>
                             <img className={styles.pegzImage} src="/images/pegz/pegz.jpg" />
+                            <h2 className={styles.name}>Name: {asset.name}</h2>
                         </div>
-                        
-                        <h2 className={styles.name}>Name: {asset.name}</h2>
                         
                         {asset.extraTitle && asset.extraContent && (
                             <div className={styles.extra}>

@@ -1,5 +1,10 @@
 @import "../../styles/partials/underline";
-
+.centerItem {
+    text-align: center;
+    img {
+        width: 30%;
+    }
+}
 .asset {
     background: white;
     margin: auto;

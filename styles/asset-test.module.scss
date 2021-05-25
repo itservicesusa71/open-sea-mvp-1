@@ -2,7 +2,20 @@
 
 .singleAsset {
     height: 100vh;
+    background: #fff;
     
+    .pegzImageDivMobile {
+        text-align: right;
+        display: none;
+        .pegzImage {
+            width: 50%;
+            margin-bottom: 20px;
+        }
+        span {
+            font-size: 20px;
+        }
+    }
+
     .masthead {
         position: relative;
     }
@@ -32,7 +45,7 @@
     .assetMastHead {
         padding-top: 50px;
         // padding-bottom: 116px;
-        height: 100vh;
+        // height: 100vh;
 
         -webkit-backdrop-filter: blur(50px);
         backdrop-filter: blur(50px);
@@ -81,7 +94,9 @@
         .singleAssetText {
             font-size: 40px;
         }
-
+        a {
+            margin-top: 25px;
+        }
         .image {
             background: #fff;
             padding: 18px;
@@ -216,14 +231,20 @@
         .centerItem {
             text-align: center;
         }
-        .pegzImage {
-            width: 50%;
-            margin-bottom: 20px;
+        .pegzImageDiv {
+            text-align: center;
+
+            .pegzImage {
+                width: 50%;
+                margin-bottom: 20px;
+            }
         }
     }
+    
     .right * {
         font-family: "Comic Sans MS","Comic Sans","Chalkboard","ChalkboardSE-Regular",sans-serif !important;
     }
+
     .relatedGrid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -294,23 +315,43 @@
                 border-radius: 50%;
             }
         }
+
+        .nft_detail, .nft_preview {
+            width: 100%;
+        }
+        
+        .pegzImageDiv {
+            text-align: center;
+            display: none;
+        }
+        
+        .pegzImageDivMobile {
+            display: block;
+            text-align: center;
+        }
     }
 }
+
 @include media-tablet-and-smaller {
     .imageContainer {
         img {
             height: unset !important;
             width: 100%;
         }
+        
     }
     .singleAsset {
+        .pegzImageDiv {
+            text-align: center;
+        }
+
         .fullScreen {
             display: none;
         }
 
         .assetMastHead {
             padding-top: 38px;
-            padding-bottom: 53px;
+            // padding-bottom: 53px;
             margin-bottom: 0;
 
             .goBack {
@@ -362,7 +403,7 @@
             margin: auto;
             align-items: unset;
             text-align: center;
-            height: 50vh;
+            height: 400px;
 
             .singleAssetModel {
                 width: 100%;
@@ -371,7 +412,7 @@
             }
 
             .singleAssetText {
-                font-size: 40px;
+                font-size: 20px;
             }
 
             .singleAssetImage {
@@ -414,5 +455,27 @@
                 }
             }
         }
+
+        .nft_detail, .nft_preview {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .pegzImageDivMobile {
+            text-align: center;
+            display: block;
+        }    
     }
+}
+
+@include media-small-mobile-only {
+    .pegzImageDiv {
+        text-align: center;
+        display: none;
+    }
+
+    .pegzImageDivMobile {
+        text-align: center;
+        display: block;
+    }    
 }
