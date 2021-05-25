@@ -112,7 +112,9 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 {asset?.file &&
                                     asset?.file?.type === "video" && asset.slug == "terreno" && (
                                         <ReactPlayer className={styles.ReactPlayer} url={`https://stream.mux.com/${asset?.file?.link}.m3u8`} 
-                                            playsInline
+                                            playing
+                                            frameBorder='0'
+                                            allow='autoplay; encrypted-media'
                                             width='initial'
                                             height='100%'
                                             poster={ `https://image.mux.com/${asset?.file?.link}/thumbnail.png` }
