@@ -22,7 +22,7 @@ const Auctions: React.FC<{
     return (
         <main className={styles.auctions}>
             <div className={styles.headline}>
-                <div className={styles.title}>
+                {/* <div className={styles.title}>
                     <img alt="Live Auctions" src={fromTitleToImageUrl(title)} />
                 </div>
                 <div className={styles.divider}>
@@ -30,7 +30,7 @@ const Auctions: React.FC<{
                 </div>
                 <div className={styles.rightLink}>
                     {link && <Link href={link}>View All</Link>}
-                </div>
+                </div> */}
             </div>
             <div className={styles.auctionsContainer}>
                 {assets.map(

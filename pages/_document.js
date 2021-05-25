@@ -1,6 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { FullScreen } from 'react-full-screen';
 
 class MyDocument extends Document {
+
     static async getInitialProps(ctx) {
         const initialProps = await Document.getInitialProps(ctx)
         return { ...initialProps }
@@ -20,7 +22,7 @@ class MyDocument extends Document {
                         src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
                     />
                 </Head>
-                <body>
+                <body className="FullScreenBody">
                     <Main />
                     <NextScript />
                 </body>

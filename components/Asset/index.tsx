@@ -26,7 +26,7 @@ const Asset: React.FC<{
     sold,
     soldFor,
 }) => (
-    <Link href={`/asset/${slug}`}>
+    <Link href={`/asset/test/${slug}`}>
         <a>
             <div className={styles.asset}>
                 <div className={styles.imageContainer}>
@@ -39,8 +39,12 @@ const Asset: React.FC<{
                 </div>
                 <div className={styles.info}>
                     <div className={styles.name}>
-                        <h2>{artist}</h2>
-                        <h3>{name}</h3>
+                        {/* <h2>{artist}</h2>
+                        <h3>{name}</h3> */}
+                        <div className={styles.centerItem}>
+                            <img src={`/images/pegz/icon/${slug}.png`} />
+                            {/* <img src={'/images/pegz/'+fff+'.png'} /> */}
+                        </div>
                     </div>
                     <div className={styles.footer}>
                         {onSale && !sold && (
