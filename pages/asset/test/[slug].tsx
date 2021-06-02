@@ -111,7 +111,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 <img src="/images/back-arrow.svg" alt="Back" />
                             </button>
                             <div className={styles.imageContainer}>
-                                <ModelViewer src="/images/scene.glb" />
+                                <ModelViewer src={asset.gltf} />
                                 <a type="button"><span className={styles.singleAssetText}>01</span>
                                     <img className={styles.singleAssetImage} src="/images/pegz/creeper.png" />
                                 </a>
@@ -292,7 +292,7 @@ export default SingleAssetPage;
 export async function getStaticPaths() {
     const tokenRes = await fetch(`${API_URL}/tokens?_limit=-1`);
     const tokens = await tokenRes.json();
-
+    // console.log(tokenRes, "tokens", tokens)
     return {
         paths: tokens.map((asset) => ({
             params: { slug: asset.slug },
@@ -305,6 +305,7 @@ export async function getStaticProps({ params }) {
     const tokenRes = await fetch(`${API_URL}/tokens?slug=${params.slug}`);
     const tokens = await tokenRes.json();
     const found = tokens[0];
+    
     return {
         props: {
             asset: found,
