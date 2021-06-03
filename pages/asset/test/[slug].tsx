@@ -100,7 +100,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             style={{ backgroundImage: `url(${asset.imageUrl})` }}
                         /> */}
                         <div className={styles.assetMastHead}>
-                            <button
+                            {/* <button
                                 className={styles.goBack}
                                 onClick={
                                     handle.active
@@ -109,8 +109,9 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 }
                             >
                                 <img src="/images/back-arrow.svg" alt="Back" />
-                            </button>
+                            </button> */}
                             <div className={styles.imageContainer}>
+                                {/* <ModelViewer src={asset.gltf} /> */}
                                 <ModelViewer src={asset.gltf} />
                                 <a type="button"><span className={styles.singleAssetText}>01</span>
                                     <img className={styles.singleAssetImage} src="/images/pegz/creeper.png" />
@@ -167,7 +168,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                     <div className={styles.right}>
                         <div className={styles.pegzImageDiv}>
                             <img className={styles.pegzImage} src="/images/pegz/pegz.jpg" />
-                            <h2 className={styles.name}>Name: {asset.name}</h2>
+                            <p className={styles.name}>Name: {asset.name}</p>
                         </div>
                         
                         {asset.extraTitle && asset.extraContent && (

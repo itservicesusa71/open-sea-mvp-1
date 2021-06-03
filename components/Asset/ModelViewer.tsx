@@ -16,6 +16,7 @@ const ModelViewer: React.FC<{
         alt="A 3D model of an astronaut"
         auto-rotate
         camera-controls
+        environment-image="neutral"
         // ambientIntensity = "2"
         // directIntensity = "4"
         directColor="#fff"
