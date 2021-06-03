@@ -113,7 +113,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             <div className={styles.imageContainer}>
                                 <ModelViewer src={asset.gltf} />
                                 {/* <ModelViewer src="/images/scene.glb" /> */}
-                                <a type="button"><span className={styles.singleAssetText}>{asset.name}</span>
+                                <a type="button" className = {styles.assetButton} ><span className={styles.singleAssetText}>{asset.name}</span>
                                     <img className={styles.singleAssetImage} src={asset.iconUrl} />
                                 </a>
                             </div>
@@ -167,7 +167,9 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                     </div>
                     <div className={styles.right}>
                         <div className={styles.pegzImageDiv}>
-                            <img className={styles.pegzImage} src={asset.iconUrl} />
+                            <a href="/">
+                                <img className={styles.pegzImage} src="/images/pegz/pegz.jpg" />
+                            </a>
                             <p className={styles.name}>Name: {asset.name}</p>
                         </div>
                         
@@ -252,6 +254,24 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 <span>
                                     <MarkdownRenderer markdown={asset.description} />
                                 </span>
+                                <p>
+                                    NFT bundle:
+                                </p>
+                                <p>
+                                    Pegz Avatar Image (.PNG)
+                                </p>
+                                <p>Pegz Animation</p>
+                                <p>Pegz 3D File (.GLTF)</p>
+                                <p>ERC 721 Token Standard</p>
+                                <br/>
+                                <h3>
+                                    <a href="#" target="_blank" rel="nofollow noreferrer">View on Etherscan</a>
+                                </h3>
+                                <h3>
+                                    <a href="#" target="_blank" rel="nofollow noreferrer">
+                                        View on IPFS
+                                    </a>
+                                </h3>
                             </div>
 
                             {modalOpen && (

@@ -86,18 +86,22 @@
         // display: flex;
         // justify-content: center;
         align-items: center;
-
-        .singleAssetImage {
-            height: 90px;
-            clear: both;
-        }
-        .singleAssetText {
-            font-size: 80px;
-            font-family: "Comic Sans MS","Comic Sans","Chalkboard","ChalkboardSE-Regular", sans-serif !important;
-        }
-        a {
+        
+        .assetButton {
+            display: flex;
+            align-items: center;
             margin-top: 25px;
+
+            .singleAssetImage {
+                height: 90px;
+                clear: both;
+            }
+            .singleAssetText {
+                font-size: 70px;
+                font-family: "Comic Sans MS","Comic Sans","Chalkboard","ChalkboardSE-Regular", sans-serif !important;
+            }
         }
+       
         .image {
             background: #fff;
             padding: 18px;
