@@ -5,7 +5,8 @@
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 10px;
-    display: flow-root;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #d5d5d5;
 
@@ -14,7 +15,7 @@
     }
     
     .biderInfo {
-        float: left;
+        // float: left;
         .bidder {
             font-size: 16px;
             margin-bottom: 10px;
@@ -26,7 +27,7 @@
     }
     
     .price {
-        float: right;
+        // float: right;
         font-size: 22px;
         white-space: nowrap;
     }
