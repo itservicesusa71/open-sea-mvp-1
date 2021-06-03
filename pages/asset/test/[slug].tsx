@@ -111,10 +111,10 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 <img src="/images/back-arrow.svg" alt="Back" />
                             </button> */}
                             <div className={styles.imageContainer}>
-                                {/* <ModelViewer src={asset.gltf} /> */}
-                                <ModelViewer src="/images/scene.glb" />
-                                <a type="button"><span className={styles.singleAssetText}>01</span>
-                                    <img className={styles.singleAssetImage} src="/images/pegz/creeper.png" />
+                                <ModelViewer src={asset.gltf} />
+                                {/* <ModelViewer src="/images/scene.glb" /> */}
+                                <a type="button"><span className={styles.singleAssetText}>{asset.name}</span>
+                                    <img className={styles.singleAssetImage} src={asset.iconUrl} />
                                 </a>
                             </div>
                             {/* <button
@@ -167,7 +167,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                     </div>
                     <div className={styles.right}>
                         <div className={styles.pegzImageDiv}>
-                            <img className={styles.pegzImage} src="/images/pegz/pegz.jpg" />
+                            <img className={styles.pegzImage} src={asset.iconUrl} />
                             <p className={styles.name}>Name: {asset.name}</p>
                         </div>
                         

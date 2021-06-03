@@ -24,7 +24,7 @@ const Bid: React.FC<{ buyOrder: OrderFromAPI }> = ({ buyOrder }) => {
     const profiles = useProfiles();
     return (
         <div className={styles.bid}>
-            <div>
+            <div className={styles.biderInfo}>
                 <p className={styles.bidder}>
                     Bid Placed by{" "}
                     {getUserName(buyOrder.maker.address, profiles)}
