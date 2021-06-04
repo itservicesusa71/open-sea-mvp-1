@@ -266,11 +266,16 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 <p>ERC 721 Token Standard</p>
                                 <br/>
                                 <h3>
-                                    <a href="#" target="_blank" rel="nofollow noreferrer">View on Etherscan</a>
+                                    <a href={asset.etherscan} target="_blank" rel="nofollow noreferrer">View on Etherscan</a>
                                 </h3>
                                 <h3>
-                                    <a href="#" target="_blank" rel="nofollow noreferrer">
+                                    <a href={asset.ipfs} target="_blank" rel="nofollow noreferrer">
                                         View on IPFS
+                                    </a>
+                                </h3>
+                                <h3>
+                                    <a href={asset.ipfsmetadata} target="_blank" rel="nofollow noreferrer">
+                                        View on IPFS Metadata
                                     </a>
                                 </h3>
                             </div>
