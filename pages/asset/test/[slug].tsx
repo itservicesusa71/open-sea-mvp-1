@@ -254,6 +254,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 <span>
                                     <MarkdownRenderer markdown={asset.description} />
                                 </span>
+                                <br />
                                 <p>
                                     NFT bundle:
                                 </p>
