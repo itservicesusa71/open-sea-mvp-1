@@ -167,7 +167,9 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                     </div>
                     <div className={styles.right}>
                         <div className={styles.pegzImageDiv}>
-                            <img className={styles.pegzImage} src={asset.iconUrl} />
+                            <a href="/">
+                                <img className={styles.pegzImage} src="/images/pegz/pegz.jpg" />
+                            </a>
                             <p className={styles.name}>Name: {asset.name}</p>
                         </div>
                         
