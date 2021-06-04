@@ -25,7 +25,7 @@ export const PegzHome: React.FC<{
     return (
         <div className={styles.container}>
             <Head>
-                <title>Chainsaw NFT</title>
+                <title>PegzFun NFT</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <section className={styles.auctionSection}>
