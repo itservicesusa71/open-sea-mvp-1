@@ -31,7 +31,7 @@ const LoginPage: React.FC = () => {
 
                 <Link href="/">
                     <button className={styles.enterButton}>
-                        ENTER CHAINSAW
+                        ENTER PEGZ
                     </button>
                 </Link>
                 <Link href="/settings">
