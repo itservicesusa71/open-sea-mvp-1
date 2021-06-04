@@ -6,7 +6,7 @@ import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
     return (
-        <header>
+        <header className={styles.mainHeader}>
             <div className={styles.header}>
                 {/* <div className={styles.left}>
                     <div>
