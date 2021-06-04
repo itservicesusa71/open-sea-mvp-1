@@ -261,8 +261,8 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 <p>
                                     Pegz Avatar Image (.PNG)
                                 </p>
-                                <p>Pegz Animation</p>
-                                <p>Pegz 3D File (.GLTF)</p>
+                                <p>Pegz Animation (.GIF)</p>
+                                <p>Pegz 3D File (.GLB)</p>
                                 <p>ERC 721 Token Standard</p>
                                 <br/>
                                 <h3>
