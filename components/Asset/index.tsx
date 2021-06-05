@@ -49,7 +49,7 @@ const Asset: React.FC<{
                         </div>
                     </div>
                     <div className={styles.footer}>
-                        {onSale && !sold && (
+                        {/* {onSale && !sold && (
                             <div>
                                 <button>Bid Now</button>
                             </div>
@@ -60,7 +60,7 @@ const Asset: React.FC<{
                                 <h4>Sold for</h4>{" "}
                                 <h3>{utils.formatEther(soldFor)}</h3>
                             </div>
-                        )}
+                        )} */}
 
                         {reserve && !sold && (
                             <div>
