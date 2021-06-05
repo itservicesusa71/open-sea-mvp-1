@@ -62,7 +62,7 @@ const Asset: React.FC<{
 
                         {reserve && !sold && (
                             <div>
-                                <h4>Reserve price:</h4> <h3>{reserve} ETH</h3>
+                                {/* <h4>Reserve price:</h4> <h3>{reserve} ETH</h3> */}
                             </div>
                         )}
                     </div>

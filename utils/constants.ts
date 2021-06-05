@@ -21,3 +21,6 @@ export const AVAILABLE_TOKENS_QUERY =
     "onSale=true&sold=false&_sort=priority:DESC";
 
 export const SOLD_TOKENS_QUERY = "sold=true&_sort=priority:DESC";
+
+export const DASH_TOKENS_QUERY =
+    "_sort=id";

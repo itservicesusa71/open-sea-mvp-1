@@ -12,7 +12,7 @@ const Layout: React.FC = ({ children }) => {
         router.pathname.includes("onboarding");
 
     const isPegz = 
-        router.pathname == "/";
+        router.pathname == "/pegz";
 
     return (
         <div className={styles.layout}>
