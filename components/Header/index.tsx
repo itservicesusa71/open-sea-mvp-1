@@ -65,14 +65,14 @@ const Header: React.FC = () => {
                             </div>
                         </div>
                         <div className={styles.social}>
-                            <a href="https://www.instagram.com/chainsaw_nft">
-                                <img src="/logos/instagram.png" alt="discord" />
+                            <a href="https://www.instagram.com/pegzpegzpegz">
+                                <img src="/logos/instagram.png" alt="ig" />
                             </a>
                             <a href="https://discord.com/invite/aXQqKxKggh">
                                 <img src="/logos/discord.png" alt="discord" />
                             </a>
-                            <a href="https://twitter.com/ChainSawNFT">
-                                <img src="/logos/twitter.png" alt="discord" />
+                            <a href="https://twitter.com/Matt_Furie">
+                                <img src="/logos/twitter.png" alt="twitter" />
                             </a>
                         </div>
                     </div>
