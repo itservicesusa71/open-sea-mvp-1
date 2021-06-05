@@ -36,8 +36,8 @@ const AssetOnDash: React.FC<{
     currentBid,
 }) => {
     return (
-        <Link className={styles.nftIframe} href={`/asset/${slug}`}>
-            <a>
+        <Link href={`/asset/${slug}`}>
+            <a className={styles.nftIframe}>
                 <div className={styles.asset}>
                     <div className={styles.imageContainer}>
                         {file && file.type === "video" && file.link && (
