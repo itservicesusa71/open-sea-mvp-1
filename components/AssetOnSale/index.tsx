@@ -72,19 +72,19 @@ const AssetOnSale: React.FC<{
                         </div>
 
                         <div className={styles.footer}>
-                            {onSale && !sold && (
+                            {/* {onSale && !sold && (
                                 <div className={styles.buyButton}>
                                     <div>
                                         <button>Bid Now</button>
                                     </div>
-                                    {/* {!salesOrder?.listing_time && (
+                                    {!salesOrder?.listing_time && (
                                         <div>
                                             <h3>Reserve price</h3>
                                             <p>{reserve} ETH</p>
                                         </div>
-                                    )} */}
+                                    )}
                                 </div>
-                            )}
+                            )} */}
 
                             {!onSale && (
                                 <div className={styles.notAvail}>
