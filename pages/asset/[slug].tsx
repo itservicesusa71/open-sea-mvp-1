@@ -261,23 +261,25 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 <p>
                                     Pegz Avatar Image (.PNG)
                                 </p>
-                                <p>Pegz Animation</p>
-                                <p>Pegz 3D File (.GLTF)</p>
+                                <p>Pegz Animation <b>(.GIF)</b></p>
+                                <p>Pegz 3D File <b>(.GLTF)</b></p>
                                 <p>ERC 721 Token Standard</p>
                                 <br/>
                                 <h3>
-                                    <a href={asset.etherscan} target="_blank" rel="nofollow noreferrer">View on Etherscan</a>
+                                    <a href={asset.Etherscan} target="_blank" rel="nofollow noreferrer">
+                                        View on Etherscan
+                                    </a>
                                 </h3>
                                 <h3>
-                                    <a href={asset.ipfs} target="_blank" rel="nofollow noreferrer">
+                                    <a href={asset.IPFS} target="_blank" rel="nofollow noreferrer">
                                         View on IPFS
                                     </a>
                                 </h3>
-                                <h3>
-                                    <a href={asset.ipfsmetadata} target="_blank" rel="nofollow noreferrer">
+                                {/* <h3>
+                                    <a href={asset.IPFSMetadata} target="_blank" rel="nofollow noreferrer">
                                         View on IPFS Metadata
                                     </a>
-                                </h3>
+                                </h3> */}
                             </div>
 
                             {modalOpen && (
@@ -319,7 +321,7 @@ export default SingleAssetPage;
 export async function getStaticPaths() {
     const tokenRes = await fetch(`${API_URL}/tokens?_limit=-1`);
     const tokens = await tokenRes.json();
-    // console.log(tokenRes, "tokens", tokens)
+    
     return {
         paths: tokens.map((asset) => ({
             params: { slug: asset.slug },
@@ -332,7 +334,7 @@ export async function getStaticProps({ params }) {
     const tokenRes = await fetch(`${API_URL}/tokens?slug=${params.slug}`);
     const tokens = await tokenRes.json();
     const found = tokens[0];
-    
+    // console.log("tokens", tokens)
     return {
         props: {
             asset: found,
