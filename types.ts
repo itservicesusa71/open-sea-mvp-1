@@ -56,9 +56,9 @@ export interface NFT extends OpenSeaAsset {
     description: string;
     imageUrl: string;
     iconUrl: string;
-    ipfs: string;
-    ipfsmetadata: string;
-    etherscan: string;
+    IPFS: string;
+    IPFSMetadata: string;
+    Etherscan: string;
     gltf: string;
     name: string;
     address: string;

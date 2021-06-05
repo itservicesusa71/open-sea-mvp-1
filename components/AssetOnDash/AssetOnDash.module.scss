@@ -4,16 +4,11 @@
     background: white;
     margin: auto;
 
-    // .nftIframe {
-    //     width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;border:none;
-    // }
-
     .imageContainer {
         display: block;
         position: relative;
         padding-bottom: 100%;
-        width: 100%;
-        
+
         img,
         video {
             object-fit: cover;

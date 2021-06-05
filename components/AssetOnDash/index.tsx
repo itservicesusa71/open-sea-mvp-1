@@ -18,6 +18,7 @@ const AssetOnDash: React.FC<{
     file?: NFTFile;
     sold?: boolean;
     soldFor: string;
+    iconUrl: string;
     salesOrder?: OrderFromAPI;
     currentBid?: number;
 }> = ({
@@ -34,10 +35,11 @@ const AssetOnDash: React.FC<{
     soldFor,
     salesOrder,
     currentBid,
+    iconUrl
 }) => {
     return (
         <Link href={`/asset/${slug}`}>
-            <a className={styles.nftIframe}>
+            <a>
                 <div className={styles.asset}>
                     <div className={styles.imageContainer}>
                         {file && file.type === "video" && file.link && (
@@ -46,6 +48,55 @@ const AssetOnDash: React.FC<{
                         {!(file && file.type === "video" && file.link) && (
                             <img src={imageUrl} alt={name} />
                         )}
+                    </div>
+                    <div className={styles.info}>
+                        <div className={styles.name}>
+                            {/* <h2>{artist}</h2> */}
+                            <h3>{name}: <img src={iconUrl} /></h3>
+                        </div>
+
+                        <div className={styles.ends}>
+                            <h3>Auction Ends at</h3>
+                            <p>
+                                {salesOrder?.listing_time && onSale ? (
+                                    <Countdown
+                                        date={salesOrder?.listing_time * 1000}
+                                    />
+                                ) : (
+                                    "---"
+                                )}
+                            </p>
+                        </div>
+
+                        <div className={styles.footer}>
+                            {onSale && !sold && (
+                                <div className={styles.buyButton}>
+                                    <div>
+                                        <button>Bid Now</button>
+                                    </div>
+                                    {!salesOrder?.listing_time && (
+                                        <div>
+                                            <h3>Reserve price</h3>
+                                            <p>{reserve} ETH</p>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+
+                            {!onSale && (
+                                <div className={styles.notAvail}>
+                                    <h3>Price</h3>
+                                    <h2>---</h2>
+                                </div>
+                            )}
+
+                            {sold && (
+                                <div>
+                                    <h4>Sold for</h4>{" "}
+                                    <h3>{utils.formatEther(soldFor)}</h3>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </a>

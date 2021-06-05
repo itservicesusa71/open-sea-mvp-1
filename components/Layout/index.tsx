@@ -12,6 +12,7 @@ const Layout: React.FC = ({ children }) => {
         router.pathname.includes("onboarding");
 
     const isPegz = 
+        router.pathname.includes("asset") ||
         router.pathname == "/";
 
     return (
@@ -22,6 +23,7 @@ const Layout: React.FC = ({ children }) => {
             
             {children}
             {!isPegz && <Footer />}
+            {isPegz && <div className={styles.emptyFooter} />}
         </div>
     );
 };

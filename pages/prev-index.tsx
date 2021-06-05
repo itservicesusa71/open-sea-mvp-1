@@ -83,7 +83,7 @@ export const Home: React.FC<{
                     <div className="divsocial"> <a href="https://www.instagram.com/pegzpegzpegz/"> <img id="imgsocial" src="/images/pegz/mig.png" /></a></div>
                     <div className="divsocial"> <a href="https://discord.com/invite/aXQqKxKggh"> <img id="imgsocial" src="/images/pegz/mdiscord.png" /></a></div>
                 </div>
-                <p className={styles.socialTextContent}> @ 2021 PEGZ | <a href="https://www.mattfurie.com/">MATT FURIE</a> | <a href="https://www.chainsaw.fun/">CHAIN/SAW</a></p>
+                <p className={styles.socialTextContent}> @ 2021 PEGZ | <a href="https://www.mattfurie.com/">MATT FURIE</a> | <a href="https://www.pegz.fun/">PEGZ</a></p>
                 <br />
                 <br />
 
