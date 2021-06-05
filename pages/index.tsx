@@ -40,8 +40,7 @@ export const PegzHome: React.FC<{
                 {upcoming?.length > 0 && (
                     <TotalAuctions
                         assets={upcoming}
-                        title="Upcoming"
-                        link="/upcoming/0"
+                        link="/asset/0"
                     />
                 )}
             </section>
