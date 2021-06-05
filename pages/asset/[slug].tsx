@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
@@ -7,7 +7,7 @@ import moment from "moment";
 import { API_URL } from "../../utils/constants";
 import { NFT, OrderFromAPI } from "../../types";
 
-import styles from "../../styles/asset.module.scss";
+import styles from "../../styles/asset-test.module.scss";
 import useAsset from "../../hooks/useAsset";
 import Modal from "../../components/Modal";
 import Countdown from "../../components/Countdown";
@@ -18,6 +18,7 @@ import { useUser } from "../../context/UserContext";
 import VideoPlayer from "../../components/VideoPlayer";
 import HeadWithImage from "../../components/HeadWithImage";
 import MarkdownRenderer from "../../components/MarkdownRenderer";
+import ModelViewer from "../../components/Asset/ModelViewer";
 
 const BuyWidgetNoSsr = dynamic(() => import("../../components/BuyWidget"), {
     ssr: false,
@@ -49,12 +50,16 @@ const OrderModal: React.FC<{
 );
 
 const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
+    
     const [showPdfModal, setShowPdfModal] = useState(false);
     const user = useUser();
+
+    
     const { asset: assetData, fetchAsset } = useAsset(
         asset.address,
         asset.tokenId,
     );
+
     const [modalOpen, setModalOpen] = useState(false);
 
     const related = useRelatedAssets(asset);
@@ -79,214 +84,227 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                 description={asset.description}
                 imageUrl={asset.imageUrl}
             />
-            <FullScreen handle={handle}>
-                <div className={styles.masthead}>
-                    <div
-                        className={styles.imageBg}
-                        style={{ backgroundImage: `url(${asset.imageUrl})` }}
-                    />
-                    <div className={styles.assetMastHead}>
-                        <button
-                            className={styles.goBack}
-                            onClick={
-                                handle.active
-                                    ? () => handle.exit()
-                                    : () => router.back()
-                            }
-                        >
-                            <img src="/images/back-arrow.svg" alt="Back" />
-                        </button>
-                        <div className={styles.imageContainer}>
-                            <span
-                                className={`${styles.image} ${
-                                    handle.active ? styles.active : ""
-                                }`}
-                            >
-                                {asset?.file &&
-                                    asset?.file?.type === "video" && (
-                                        <VideoPlayer
-                                            playbackId={asset?.file?.link}
-                                        />
-                                    )}
 
-                                {!(
-                                    asset?.file && asset?.file?.type === "video"
-                                ) && (
-                                    <img
-                                        src={asset.imageUrl}
-                                        alt={asset.name}
-                                    />
+            <div className={styles.pegzImageDivMobile}>
+                <img className={styles.pegzImage} src="/images/pegz/pegz.jpg" />
+                <div>
+                    <span className={styles.name}>Name: {asset.name}</span>
+                </div>
+            </div>
+
+            <section className={styles.nft_preview}>
+                <FullScreen handle={handle}>
+                    <div className={styles.masthead}>
+                        {/* <div
+                            className={styles.imageBg}
+                            style={{ backgroundImage: `url(${asset.imageUrl})` }}
+                        /> */}
+                        <div className={styles.assetMastHead}>
+                            {/* <button
+                                className={styles.goBack}
+                                onClick={
+                                    handle.active
+                                        ? () => handle.exit()
+                                        : () => router.back()
+                                }
+                            >
+                                <img src="/images/back-arrow.svg" alt="Back" />
+                            </button> */}
+                            <div className={styles.imageContainer}>
+                                <ModelViewer src={asset.gltf} />
+                                {/* <ModelViewer src="/images/scene.glb" /> */}
+                                <a type="button" className = {styles.assetButton} ><span className={styles.singleAssetText}>{asset.name}</span>
+                                    <img className={styles.singleAssetImage} src={asset.iconUrl} />
+                                </a>
+                            </div>
+                            {/* <button
+                                type="button"
+                                className={styles.fullScreen}
+                                onClick={
+                                    handle.active
+                                        ? () => handle.exit()
+                                        : () => handle.enter()
+                                }
+                            >
+                                {handle.active ? "Close" : "FullScreen"}
+                            </button> */}
+                        </div>
+                    </div>
+                </FullScreen>
+            </section>
+            <section className={styles.nft_detail}>
+                <div className={styles.info}>
+                    <div className={styles.left}>
+                        {/* <h2 className={styles.artist}>
+                            <Link href={`/artist/${asset?.artist?.slug}`}>
+                                <a>{asset?.artist?.name}</a>
+                            </Link>
+                        </h2> */}
+                        
+                        {/* <h2>
+                            {asset?.artist?.name ? (
+                                <Link href={`/artist/${asset.artist.slug}`}>
+                                    <a>More Artwork From {asset.artist.name}</a>
+                                </Link>
+                            ) : (
+                                "More works"
+                            )}{" "}
+                        </h2>
+                        <div className={styles.relatedGrid}>
+                            {related.map((token) => (
+                                <div className={styles.relatedEntry}>
+                                    <Link href={`/asset/${token.slug}`}>
+                                        <a>
+                                            <img
+                                                src={token.imageUrl}
+                                                alt={token.name}
+                                            />
+                                        </a>
+                                    </Link>
+                                </div>
+                            ))}
+                        </div> */}
+                    </div>
+                    <div className={styles.right}>
+                        <div className={styles.pegzImageDiv}>
+                            <a href="/">
+                                <img className={styles.pegzImage} src="/images/pegz/pegz.jpg" />
+                            </a>
+                            <p className={styles.name}>Name: {asset.name}</p>
+                        </div>
+                        
+                        {asset.extraTitle && asset.extraContent && (
+                            <div className={styles.extra}>
+                                <h2>{asset?.extraTitle}</h2>
+                                <MarkdownRenderer markdown={asset?.extraContent} />
+                            </div>
+                        )}
+
+                        <div className={styles.details}>    
+                            <div className={styles.auction}>
+                                {asset.onSale && (
+                                    <>
+                                        {currentBid > 0 && (
+                                            <div>
+                                                <h3>Current Bid</h3>
+                                                <p>{currentBid} ETH</p>
+                                            </div>
+                                        )}
+                                        {currentBid === 0 && (
+                                            <div>
+                                                <h3>Reserve price</h3>
+                                                <p>{asset.reserve} ETH</p>
+                                            </div>
+                                        )}
+                                    </>
                                 )}
-                            </span>
-                            {asset?.file && asset?.file?.type === "pdf" && (
-                                <button
-                                    className={styles.viewPdf}
-                                    onClick={() => setShowPdfModal(true)}
-                                >
-                                    View Gallery
+                                {asset.onSale && (
+                                    <div>
+                                        <h3>Auction Ends at</h3>
+                                        <p>
+                                            {endOfAuction && asset.onSale ? (
+                                                <Countdown date={endOfAuction} />
+                                            ) : (
+                                                "---"
+                                            )}
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                            {!asset.onSale && (
+                                <button className={styles.bidButton} type="button">
+                                    {asset.buttonMessage || "Coming Soon"}
                                 </button>
                             )}
-                        </div>
-                        <button
-                            type="button"
-                            className={styles.fullScreen}
-                            onClick={
-                                handle.active
-                                    ? () => handle.exit()
-                                    : () => handle.enter()
-                            }
-                        >
-                            {handle.active ? "Close" : "FullScreen"}
-                        </button>
-                        <div />
-                    </div>
-                </div>
-            </FullScreen>
-            <div className={styles.info}>
-                <div className={styles.left}>
-                    <h2 className={styles.artist}>
-                        <Link href={`/artist/${asset?.artist?.slug}`}>
-                            <a>{asset?.artist?.name}</a>
-                        </Link>
-                    </h2>
-                    <h2 className={styles.name}>{asset.name}</h2>
-                    <div className={styles.description}>
-                        <h3>Description</h3>
-                        <span>
-                            <MarkdownRenderer markdown={asset.description} />
-                        </span>
-                    </div>
-
-                    {asset.extraTitle && asset.extraContent && (
-                        <div className={styles.extra}>
-                            <h2>{asset?.extraTitle}</h2>
-                            <MarkdownRenderer markdown={asset?.extraContent} />
-                        </div>
-                    )}
-
-                    <h2>
-                        {asset?.artist?.name ? (
-                            <Link href={`/artist/${asset.artist.slug}`}>
-                                <a>More Artwork From {asset.artist.name}</a>
-                            </Link>
-                        ) : (
-                            "More works"
-                        )}{" "}
-                    </h2>
-                    <div className={styles.relatedGrid}>
-                        {related.map((token) => (
-                            <div className={styles.relatedEntry}>
-                                <Link href={`/asset/${token.slug}`}>
-                                    <a>
-                                        <img
-                                            src={token.imageUrl}
-                                            alt={token.name}
-                                        />
-                                    </a>
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <div className={styles.right}>
-                    <div className={styles.details}>
-                        <div className={styles.auction}>
                             {asset.onSale && (
                                 <>
-                                    {currentBid > 0 && (
-                                        <div>
-                                            <h3>Current Bid</h3>
-                                            <p>{currentBid} ETH</p>
-                                        </div>
+                                    {user && (
+                                        <>
+                                            <button
+                                                className={styles.bidButton}
+                                                onClick={() => setModalOpen(true)}
+                                                type="button"
+                                            >
+                                                Bid Now
+                                            </button>
+                                            <p>
+                                                A new high bid placed under 10
+                                                minutes will extend the auction by
+                                                10 minutes{" "}
+                                            </p>
+                                            <br />
+                                        </>
                                     )}
-                                    {currentBid === 0 && (
-                                        <div>
-                                            <h3>Reserve price</h3>
-                                            <p>{asset.reserve} ETH</p>
-                                        </div>
+
+                                    {!user && (
+                                        <Link href="/login">
+                                            <button
+                                                className={styles.bidButton}
+                                                type="button"
+                                            >
+                                                Bid Now
+                                            </button>
+                                        </Link>
                                     )}
                                 </>
                             )}
-                            {asset.onSale && (
-                                <div>
-                                    <h3>Auction Ends at</h3>
-                                    <p>
-                                        {endOfAuction && asset.onSale ? (
-                                            <Countdown date={endOfAuction} />
-                                        ) : (
-                                            "---"
-                                        )}
-                                    </p>
-                                </div>
+                        
+                            <div className={styles.description}>
+                                <h3>Description</h3>
+                                <span>
+                                    <MarkdownRenderer markdown={asset.description} />
+                                </span>
+                                <br />
+                                <p>
+                                    NFT bundle:
+                                </p>
+                                <p>
+                                    Pegz Avatar Image (.PNG)
+                                </p>
+                                <p>Pegz Animation</p>
+                                <p>Pegz 3D File (.GLTF)</p>
+                                <p>ERC 721 Token Standard</p>
+                                <br/>
+                                <h3>
+                                    <a href="#" target="_blank" rel="nofollow noreferrer">View on Etherscan</a>
+                                </h3>
+                                <h3>
+                                    <a href="#" target="_blank" rel="nofollow noreferrer">
+                                        View on IPFS
+                                    </a>
+                                </h3>
+                            </div>
+
+                            {modalOpen && (
+                                <OrderModal
+                                    buyOrders={assetData?.orders || []}
+                                    handleClose={() => {
+                                        setModalOpen(false);
+                                        fetchAsset();
+                                    }}
+                                    address={asset.address}
+                                    tokenId={asset.tokenId}
+                                    reserve={asset.reserve}
+                                />
                             )}
                         </div>
-                        {!asset.onSale && (
-                            <button className={styles.bidButton} type="button">
-                                {asset.buttonMessage || "Coming Soon"}
-                            </button>
-                        )}
-                        {asset.onSale && (
-                            <>
-                                {user && (
-                                    <>
-                                        <button
-                                            className={styles.bidButton}
-                                            onClick={() => setModalOpen(true)}
-                                            type="button"
-                                        >
-                                            Bid Now
-                                        </button>
-                                        <p>
-                                            A new high bid placed under 10
-                                            minutes will extend the auction by
-                                            10 minutes{" "}
-                                        </p>
-                                        <br />
-                                    </>
-                                )}
-
-                                {!user && (
-                                    <Link href="/login">
-                                        <button
-                                            className={styles.bidButton}
-                                            type="button"
-                                        >
-                                            Bid Now
-                                        </button>
-                                    </Link>
-                                )}
-                            </>
-                        )}
-
-                        {modalOpen && (
-                            <OrderModal
-                                buyOrders={assetData?.orders || []}
-                                handleClose={() => {
-                                    setModalOpen(false);
-                                    fetchAsset();
-                                }}
-                                address={asset.address}
-                                tokenId={asset.tokenId}
-                                reserve={asset.reserve}
-                            />
-                        )}
-                    </div>
-                    <OrdersNoSsr asset={assetData} />
-                    <div className={styles.owner}>
-                        <h3>Owner</h3>
-                        <div>
-                            <span>{owner || asset?.artist?.name}</span>
+                        <OrdersNoSsr asset={assetData} />
+                        <div className={styles.owner}>
+                            <h3>Owner</h3>
+                            <div>
+                                <span>{owner || asset?.artist?.name}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            {showPdfModal && (
+            </section>
+            {/* {showPdfModal && (
                 <Modal handleClose={() => setShowPdfModal(false)}>
                     {asset?.file?.type === "pdf" && asset?.file?.link && (
                         <PDFViewer file={asset.file.link} />
                     )}
                 </Modal>
-            )}
+            )} */}
         </main>
     );
 };
@@ -296,7 +314,7 @@ export default SingleAssetPage;
 export async function getStaticPaths() {
     const tokenRes = await fetch(`${API_URL}/tokens?_limit=-1`);
     const tokens = await tokenRes.json();
-
+    // console.log(tokenRes, "tokens", tokens)
     return {
         paths: tokens.map((asset) => ({
             params: { slug: asset.slug },
@@ -309,6 +327,7 @@ export async function getStaticProps({ params }) {
     const tokenRes = await fetch(`${API_URL}/tokens?slug=${params.slug}`);
     const tokens = await tokenRes.json();
     const found = tokens[0];
+    
     return {
         props: {
             asset: found,

@@ -15,6 +15,7 @@ const Asset: React.FC<{
     file?: NFTFile;
     sold?: boolean;
     soldFor: string;
+    iconUrl: string;
 }> = ({
     imageUrl,
     name,
@@ -25,6 +26,7 @@ const Asset: React.FC<{
     file,
     sold,
     soldFor,
+    iconUrl
 }) => (
     <Link href={`/asset/test/${slug}`}>
         <a>
@@ -42,7 +44,7 @@ const Asset: React.FC<{
                         {/* <h2>{artist}</h2>
                         <h3>{name}</h3> */}
                         <div className={styles.centerItem}>
-                            <img src={`/images/pegz/icon/${slug}.png`} />
+                            <img src={iconUrl} />
                             {/* <img src={'/images/pegz/'+fff+'.png'} /> */}
                         </div>
                     </div>

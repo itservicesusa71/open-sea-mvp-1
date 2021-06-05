@@ -45,6 +45,7 @@ const Auctions: React.FC<{
                         file,
                         sold,
                         soldFor,
+                        iconUrl
                     }) => (
                         <>
                             <Asset
@@ -59,6 +60,7 @@ const Auctions: React.FC<{
                                 name={name}
                                 reserve={reserve}
                                 file={file}
+                                iconUrl={iconUrl}
                             />
                         </>
                     ),
