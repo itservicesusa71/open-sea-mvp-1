@@ -28,7 +28,7 @@ const Asset: React.FC<{
     soldFor,
     iconUrl
 }) => (
-    <Link href={`/asset/test/${slug}`}>
+    <Link href={`/asset/${slug}`}>
         <a>
             <div className={styles.asset}>
                 <div className={styles.imageContainer}>
