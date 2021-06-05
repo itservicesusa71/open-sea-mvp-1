@@ -23,8 +23,13 @@
     .info {
         padding: 24px 40px 32px;
         text-align: center;
-
+        * {
+            font-family: "Comic Sans MS", "Comic Sans", "Chalkboard", "ChalkboardSE-Regular", sans-serif;
+        }
         .name {
+            .nftIcon {
+                width: 40%;
+            }
             h2 {
                 font-size: 20px;
                 font-weight: bold;
