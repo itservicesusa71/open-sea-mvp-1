@@ -7,7 +7,7 @@ const url =
 
 const Footer: React.FC = () => (
     <footer className={styles.footer}>
-        © 2021 PEGZ / <a href="https:/www.mattfurie.com">Matt Furie</a>/ <a href="https:/www.chainsaw.fun">Chain/Saw</a>
+        © 2021 PEGZ / <a href="https://www.mattfurie.com">Matt Furie</a>/ <a href="https://www.chainsaw.fun">Chain/Saw</a>
         <div>
             <h3>Sign Up For Drops</h3>
             <MailchimpSubscribe url={url} />
