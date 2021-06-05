@@ -255,15 +255,17 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                     <MarkdownRenderer markdown={asset.description} />
                                 </span>
                                 <br />
-                                <p>
-                                    NFT bundle:
-                                </p>
-                                <p>
-                                    Pegz Avatar Image (.PNG)
-                                </p>
-                                <p>Pegz Animation <b>(.GIF)</b></p>
-                                <p>Pegz 3D File <b>(.GLTF)</b></p>
-                                <p>ERC 721 Token Standard</p>
+                                <div className={styles.bundleDescription}>
+                                    <p>
+                                        NFT bundle:
+                                    </p>
+                                    <p>
+                                        Pegz Avatar Image <b>(.PNG)</b>
+                                    </p>
+                                    <p>Pegz Animation <b>(.GIF)</b></p>
+                                    <p>Pegz 3D File <b>(.GLB)</b></p>
+                                    <p>ERC 721 Token Standard</p>
+                                </div>
                                 <br/>
                                 <h3>
                                     <a href={asset.Etherscan} target="_blank" rel="nofollow noreferrer">

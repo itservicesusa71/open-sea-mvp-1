@@ -20,6 +20,7 @@ const AssetOnSale: React.FC<{
     soldFor: string;
     salesOrder?: OrderFromAPI;
     currentBid?: number;
+    iconUrl:string;
 }> = ({
     address,
     tokenId,
@@ -34,6 +35,7 @@ const AssetOnSale: React.FC<{
     soldFor,
     salesOrder,
     currentBid,
+    iconUrl
 }) => {
     return (
         <Link href={`/asset/${slug}`}>
@@ -50,7 +52,10 @@ const AssetOnSale: React.FC<{
                     <div className={styles.info}>
                         <div className={styles.name}>
                             {/* <h2>{artist}</h2> */}
-                            <h3>{name}:  </h3>
+                            <p>
+                                <img className={styles.nftIcon} src={iconUrl} />
+                            </p>
+                            <h3>{name}</h3>
                         </div>
 
                         <div className={styles.ends}>
@@ -67,19 +72,19 @@ const AssetOnSale: React.FC<{
                         </div>
 
                         <div className={styles.footer}>
-                            {onSale && !sold && (
+                            {/* {onSale && !sold && (
                                 <div className={styles.buyButton}>
                                     <div>
                                         <button>Bid Now</button>
                                     </div>
-                                    {/* {!salesOrder?.listing_time && (
+                                    {!salesOrder?.listing_time && (
                                         <div>
                                             <h3>Reserve price</h3>
                                             <p>{reserve} ETH</p>
                                         </div>
-                                    )} */}
+                                    )}
                                 </div>
-                            )}
+                            )} */}
 
                             {!onSale && (
                                 <div className={styles.notAvail}>
