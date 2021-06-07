@@ -44,12 +44,13 @@ const Asset: React.FC<{
                         {/* <h2>{artist}</h2>
                         <h3>{name}</h3> */}
                         <div className={styles.centerItem}>
-                            <img src={iconUrl} />
+                            <img className={styles.nftIcon} src={iconUrl} />
                             {/* <img src={'/images/pegz/'+fff+'.png'} /> */}
                         </div>
+                        <h3>{name}</h3>
                     </div>
                     <div className={styles.footer}>
-                        {/* {onSale && !sold && (
+                        {onSale && !sold && (
                             <div>
                                 <button>Bid Now</button>
                             </div>
@@ -58,9 +59,10 @@ const Asset: React.FC<{
                         {sold && soldFor && (
                             <div>
                                 <h4>Sold for</h4>{" "}
-                                <h3>{utils.formatEther(soldFor)}</h3>
+                                {/* <h3>{utils.formatEther(soldFor)}</h3> */}
+                                <h3>{soldFor}</h3>
                             </div>
-                        )} */}
+                        )}
 
                         {reserve && !sold && (
                             <div>
