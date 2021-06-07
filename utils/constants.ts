@@ -15,12 +15,12 @@ export const TOKENS_PER_PAGE = 40;
 export const ARTISTS_PER_PAGE = 40;
 
 export const UPCOMING_TOKENS_QUERY =
-    "onSale=false&sold=false&_sort=priority:DESC";
+    "onSale=false&sold=false&_sort=id";
 
 export const AVAILABLE_TOKENS_QUERY =
-    "onSale=true&sold=false&_sort=priority:DESC";
+    "onSale=true&sold=false&_sort=id";
 
-export const SOLD_TOKENS_QUERY = "sold=true&_sort=priority:DESC";
+export const SOLD_TOKENS_QUERY = "sold=true&_sort=id";
 
 export const DASH_TOKENS_QUERY =
     "_sort=id";

@@ -301,7 +301,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                         <div className={styles.owner}>
                             <h3>Owner</h3>
                             <div>
-                                <span>{owner || asset?.artist?.name}</span>
+                                <span className={styles.ownerName}>{owner || asset?.artist?.name}</span>
                             </div>
                         </div>
                     </div>

@@ -103,31 +103,35 @@
 }
 
 @include media-mobile-only {
-    .header {
-        padding: 30px 15px;
+    .mainHeader {
+        width: 100%;
 
-        flex-direction: column;
-        text-align: center;
-        .left {
-            .smallLogo {
-                width: 44px;
-            }
-            .logo {
-                margin-right: 23.2px;
-                width: 173px;
-            }
-            &.bigLogo {
+        .header {
+            padding: 30px 15px;
+
+            flex-direction: column;
+            text-align: center;
+            .left {
                 .smallLogo {
-                    display: inline;
                     width: 44px;
-                    vertical-align: middle;
                 }
-
                 .logo {
-                    display: inline;
-                    width: 173px;
-                    vertical-align: middle;
                     margin-right: 23.2px;
+                    width: 173px;
+                }
+                &.bigLogo {
+                    .smallLogo {
+                        display: inline;
+                        width: 44px;
+                        vertical-align: middle;
+                    }
+
+                    .logo {
+                        display: inline;
+                        width: 173px;
+                        vertical-align: middle;
+                        margin-right: 23.2px;
+                    }
                 }
             }
         }
@@ -135,34 +139,38 @@
 }
 
 @include media-small-mobile-only {
-    .header {
-        flex-direction: column;
-        text-align: center;
-        .left {
-            white-space: nowrap;
-            display: flex;
-            justify-content: center;
-            .social {
+    .mainHeader {
+        width: 100%;
+
+        .header {
+            flex-direction: column;
+            text-align: center;
+            .left {
+                white-space: nowrap;
                 display: flex;
                 justify-content: center;
-                height: 41px;
-                align-items: center;
+                .social {
+                    display: flex;
+                    justify-content: center;
+                    height: 41px;
+                    align-items: center;
+                }
+            }
+            .right {
+                flex-direction: column;
+                margin-top: 12px;
+
+                .social {
+                    display: none;
+                }
             }
         }
-        .right {
+        .header .left {
             flex-direction: column;
-            margin-top: 12px;
 
-            .social {
-                display: none;
+            div:first-of-type {
+                margin-bottom: 12px;
             }
-        }
-    }
-    .header .left {
-        flex-direction: column;
-
-        div:first-of-type {
-            margin-bottom: 12px;
         }
     }
 }

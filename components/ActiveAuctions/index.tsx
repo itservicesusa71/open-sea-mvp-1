@@ -12,7 +12,7 @@ const Auctions: React.FC<{
     const enrichedAssets = useEnrichedAssetsData(assets);
     return (
         <main className={styles.auctions}>
-            <div className={styles.headline}>
+            {/* <div className={styles.headline}>
                 <div className={styles.title}>
                     <img alt="Live Auctions" src="/images/Auctions.png" />
                 </div>
@@ -22,7 +22,7 @@ const Auctions: React.FC<{
                 <div className={styles.rightLink}>
                     {link && <Link href={link}>View All</Link>}
                 </div>
-            </div>
+            </div> */}
             <div className={styles.auctionsContainer}>
                 {enrichedAssets.map(
                     ({

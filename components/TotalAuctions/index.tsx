@@ -44,6 +44,7 @@ const TotalAuctions: React.FC<{
                         iconUrl
                     }) => (
                         <>
+                        {!soldFor &&
                             <AssetOnSale
                                 address={address}
                                 tokenId={tokenId}
@@ -62,6 +63,23 @@ const TotalAuctions: React.FC<{
                                 currentBid={currentBid}
                                 iconUrl={iconUrl}
                             />
+                        }
+                        {soldFor &&
+                            <Asset
+                                onSale={onSale}
+                                artist={artist?.name}
+                                key={name}
+                                sold={sold}
+                                soldFor={soldFor}
+                                slug={slug}
+                                description={description}
+                                imageUrl={imageUrl}
+                                name={name}
+                                reserve={reserve}
+                                file={file}
+                                iconUrl={iconUrl}
+                            />
+                        }
                         </>
                     ),
                 )}

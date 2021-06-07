@@ -39,11 +39,12 @@
 @include media-mobile-only {
     .bid {
         background: #eee;
-        div,
-        p {
-            flex: 1;
-            white-space: nowrap;
-        }
+
+        // div,
+        // p {
+        //     flex: 1;
+        //     white-space: nowrap;
+        // }
 
         .price {
             text-align: right;
