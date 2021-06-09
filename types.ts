@@ -63,6 +63,7 @@ export interface NFT extends OpenSeaAsset {
     name: string;
     address: string;
     tokenId: string;
+    iconURLSold: string;
 
     slug: string;
     reserve: string;
@@ -105,6 +106,7 @@ export interface Collection {
     name?: string;
     imageUrl?: string;
     artist?: Artist;
+    iconURLSold: string;
     assets: any[];
     slug?: string;
 }

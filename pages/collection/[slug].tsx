@@ -30,6 +30,7 @@ const SingleCollectionPage: React.FC<{ collection: Collection }> = ({
                                     soldFor={asset.token.soldFor}
                                     sold={asset.token.sold}
                                     iconUrl={asset.token.iconUrl}
+                                    iconURLSold={asset.token.iconURLSold}
                                 />
                             ) : null;
                         },

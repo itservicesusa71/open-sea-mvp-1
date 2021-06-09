@@ -16,6 +16,7 @@ const Asset: React.FC<{
     sold?: boolean;
     soldFor: string;
     iconUrl: string;
+    iconURLSold: string;
 }> = ({
     imageUrl,
     name,
@@ -26,7 +27,8 @@ const Asset: React.FC<{
     file,
     sold,
     soldFor,
-    iconUrl
+    iconUrl,
+    iconURLSold
 }) => (
     <Link href={`/asset/${slug}`}>
         <a>
@@ -44,7 +46,7 @@ const Asset: React.FC<{
                         {/* <h2>{artist}</h2>
                         <h3>{name}</h3> */}
                         <div className={styles.centerItem}>
-                            <img className={styles.nftIcon} src={iconUrl} />
+                            <img className={styles.nftIcon} src={iconUrl??iconURLSold} />
                             {/* <img src={'/images/pegz/'+fff+'.png'} /> */}
                         </div>
                         <h3>{name}</h3>
