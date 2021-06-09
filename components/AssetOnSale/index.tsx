@@ -20,8 +20,8 @@ const AssetOnSale: React.FC<{
     soldFor: string;
     salesOrder?: OrderFromAPI;
     currentBid?: number;
-    iconUrl:string;
-    iconURLSold:string;
+    iconUrl: string;
+    iconURLSold: string;
 }> = ({
     address,
     tokenId,
