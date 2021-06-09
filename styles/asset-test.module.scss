@@ -496,6 +496,10 @@
         .pegzImageDivMobile {
             text-align: center;
             display: block;
+
+            .name {
+                display: none;
+            }
         }    
     }
 }
