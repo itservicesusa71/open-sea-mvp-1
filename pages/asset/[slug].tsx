@@ -113,7 +113,8 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             <div className={styles.imageContainer}>
                                 <ModelViewer src={asset.gltf} />
                                 {/* <ModelViewer src="/images/scene.glb" /> */}
-                                <a type="button" className = {styles.assetButton} ><span className={styles.singleAssetText}>{asset.name}</span>
+                                <a type="button" className = {styles.assetButton} >
+                                    <p className={styles.singleAssetText}>{asset.name}</p>
                                     <img className={styles.singleAssetImage} src={asset.iconUrl} />
                                 </a>
                             </div>
