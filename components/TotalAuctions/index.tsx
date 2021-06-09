@@ -41,7 +41,8 @@ const TotalAuctions: React.FC<{
                         tokenId,
                         salesOrder,
                         currentBid,
-                        iconUrl
+                        iconUrl,
+                        iconURLSold
                     }) => (
                         <>
                         {!soldFor &&
@@ -62,6 +63,7 @@ const TotalAuctions: React.FC<{
                                 salesOrder={salesOrder}
                                 currentBid={currentBid}
                                 iconUrl={iconUrl}
+                                iconURLSold={iconURLSold}
                             />
                         }
                         {soldFor &&
@@ -78,6 +80,7 @@ const TotalAuctions: React.FC<{
                                 reserve={reserve}
                                 file={file}
                                 iconUrl={iconUrl}
+                                iconURLSold={iconURLSold}
                             />
                         }
                         </>

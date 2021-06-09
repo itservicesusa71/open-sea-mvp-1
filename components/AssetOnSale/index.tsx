@@ -21,6 +21,7 @@ const AssetOnSale: React.FC<{
     salesOrder?: OrderFromAPI;
     currentBid?: number;
     iconUrl:string;
+    iconURLSold:string;
 }> = ({
     address,
     tokenId,
@@ -35,7 +36,8 @@ const AssetOnSale: React.FC<{
     soldFor,
     salesOrder,
     currentBid,
-    iconUrl
+    iconUrl,
+    iconURLSold
 }) => {
     
     return (
@@ -54,7 +56,7 @@ const AssetOnSale: React.FC<{
                         <div className={styles.name}>
                             {/* <h2>{artist}</h2> */}
                             <p>
-                                <img className={styles.nftIcon} src={iconUrl} />
+                                <img className={styles.nftIcon} src={iconUrl ?? iconURLSold} />
                             </p>
                             <h3>{name}</h3>
                         </div>
@@ -87,7 +89,7 @@ const AssetOnSale: React.FC<{
                                 </div>
                             )} */}
 
-                            {!onSale && (
+                            {(!onSale && sold) && (
                                 <div className={styles.notAvail}>
                                     <h3>Price</h3>
                                     <h2>---</h2>
