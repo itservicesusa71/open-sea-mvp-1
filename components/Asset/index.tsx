@@ -16,7 +16,7 @@ const Asset: React.FC<{
     sold?: boolean;
     soldFor: string;
     iconUrl: string;
-    iconURLSold:string;
+    iconURLSold: string;
 }> = ({
     imageUrl,
     name,

@@ -57,7 +57,8 @@ const MyCollectionPage: React.FC = () => {
                     artist,
                     sold,
                     soldFor,
-                    iconUrl
+                    iconUrl,
+                    iconURLSold
                 }) => (
                     <Asset
                         key={name}
@@ -70,6 +71,7 @@ const MyCollectionPage: React.FC = () => {
                         sold={sold}
                         soldFor={soldFor}
                         iconUrl={iconUrl}
+                        iconURLSold={iconURLSold}
                     />
                 ),
             )}

@@ -106,6 +106,7 @@ export interface Collection {
     name?: string;
     imageUrl?: string;
     artist?: Artist;
+    iconURLSold: string;
     assets: any[];
     slug?: string;
 }
