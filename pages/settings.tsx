@@ -12,6 +12,7 @@ const SettingsPage: React.FC = () => {
     const profile = useProfile();
     const setProfile = useSetProfile();
     const [newName, setNewName] = useState("");
+    const [newEmail, setNewEmail] = useState("");
     const [loading, setLoading] = useState(false);
 
     const allowance = useAllowance();
@@ -19,7 +20,7 @@ const SettingsPage: React.FC = () => {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        await setProfile(newName);
+        await setProfile(newName, newEmail);
         setLoading(false);
     };
 
