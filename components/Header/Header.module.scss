@@ -105,11 +105,12 @@
 @include media-mobile-only {
     .mainHeader {
         width: 100%;
+        // display: contents;
 
         .header {
             padding: 30px 15px;
 
-            flex-direction: column;
+            // flex-direction: column;
             text-align: center;
             .left {
                 .smallLogo {
@@ -143,7 +144,7 @@
         width: 100%;
 
         .header {
-            flex-direction: column;
+            // flex-direction: column;
             text-align: center;
             .left {
                 white-space: nowrap;
@@ -158,6 +159,7 @@
             }
             .right {
                 // flex-direction: column;
+                display: contents;
                 margin-top: 12px;
 
                 .social {

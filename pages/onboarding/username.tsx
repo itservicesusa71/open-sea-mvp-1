@@ -6,6 +6,7 @@ import styles from "../../styles/landing.module.scss";
 
 export const UsernamePage = () => {
     const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
     const setProfile = useSetProfile();
     const profile = useProfile();
@@ -14,22 +15,27 @@ export const UsernamePage = () => {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        await setProfile(name);
+        await setProfile(name, email);
         setLoading(false);
-        router.push("/");
+        // router.push("/");
     };
 
     if (profile) {
         console.log(
             "Redirected from /onboarding/username because they already have profile",
         );
-        router.push("/onboarding/eth");
+        // router.push("/onboarding/eth");
     }
 
     return (
         <div className={styles.container}>
-            <h2>Add your Username</h2>
+            <h2>Add your Email and Username</h2>
             <form onSubmit={handleSubmit}>
+                <input
+                    placeholder="Satoshi@gmail.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
                 <input
                     placeholder="Satoshi"
                     value={name}
@@ -39,9 +45,9 @@ export const UsernamePage = () => {
                     {loading ? "Loading" : "Save"}
                 </button>
             </form>
-            <Link href="/onboarding/eth">
+            {/* <Link href="/onboarding/eth">
                 <a className={styles.skip}>I prefer not to</a>
-            </Link>
+            </Link> */}
         </div>
     );
 };
