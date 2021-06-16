@@ -17,14 +17,14 @@ export const UsernamePage = () => {
         setLoading(true);
         await setProfile(name, email);
         setLoading(false);
-        // router.push("/");
+        router.push("/");
     };
 
     if (profile) {
         console.log(
             "Redirected from /onboarding/username because they already have profile",
         );
-        // router.push("/onboarding/eth");
+        router.push("/onboarding/eth");
     }
 
     return (
