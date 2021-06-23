@@ -30,7 +30,7 @@ const Asset: React.FC<{
     iconUrl,
     iconURLSold
 }) => (
-    <Link href={`/asset/${slug}`}>
+    <Link href={`/asset/video/peg-101`}>
         <a>
             <div className={styles.asset}>
                 <div className={styles.imageContainer}>
