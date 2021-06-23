@@ -4,29 +4,29 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import moment from "moment";
-import { API_URL } from "../../utils/constants";
-import { NFT, OrderFromAPI } from "../../types";
+import { API_URL } from "../../../utils/constants";
+import { NFT, OrderFromAPI } from "../../../types";
 
-import styles from "../../styles/asset-test.module.scss";
-import useAsset from "../../hooks/useAsset";
-import Modal from "../../components/Modal";
-import Countdown from "../../components/Countdown";
-import findMaxBid from "../../utils/findMaxBid";
-import useOwner from "../../hooks/useOwner";
-import useRelatedAssets from "../../hooks/useRelatedAssets";
-import { useUser } from "../../context/UserContext";
-import VideoPlayer from "../../components/VideoPlayer";
-import HeadWithImage from "../../components/HeadWithImage";
-import MarkdownRenderer from "../../components/MarkdownRenderer";
-import ModelViewer from "../../components/Asset/ModelViewer";
+import styles from "../../../styles/asset-test.module.scss";
+import useAsset from "../../../hooks/useAsset";
+import Modal from "../../../components/Modal";
+import Countdown from "../../../components/Countdown";
+import findMaxBid from "../../../utils/findMaxBid";
+import useOwner from "../../../hooks/useOwner";
+import useRelatedAssets from "../../../hooks/useRelatedAssets";
+import { useUser } from "../../../context/UserContext";
+import VideoPlayer from "../../../components/VideoPlayer";
+import HeadWithImage from "../../../components/HeadWithImage";
+import MarkdownRenderer from "../../../components/MarkdownRenderer";
+import ModelViewer from "../../../components/Asset/ModelViewer";
 
-const BuyWidgetNoSsr = dynamic(() => import("../../components/BuyWidget"), {
+const BuyWidgetNoSsr = dynamic(() => import("../../../components/BuyWidget"), {
     ssr: false,
 });
-const OrdersNoSsr = dynamic(() => import("../../components/Orders"), {
+const OrdersNoSsr = dynamic(() => import("../../../components/Orders"), {
     ssr: false,
 });
-const PDFViewer = dynamic(() => import("../../components/PDFViewer"), {
+const PDFViewer = dynamic(() => import("../../../components/PDFViewer"), {
     ssr: false,
 });
 
@@ -96,8 +96,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                     <div className={styles.masthead}>
                         <div className={styles.assetMastHead}>
                             <div className={styles.imageContainer}>
-                                <ModelViewer src={asset.gltf} />
-                                {/* <ModelViewer src="/images/scene.glb" /> */}
+                                <VideoPlayer playbackId="nuIrzHZJVtgWdvZbnxvMZzFP79O7cC5kYLGdhSTNh01I" display />
                                 <a type="button" className = {styles.assetButton} >
                                     <p className={styles.singleAssetText}>{asset.name}</p>
                                     <img className={styles.singleAssetImage} src={asset.iconUrl} />
