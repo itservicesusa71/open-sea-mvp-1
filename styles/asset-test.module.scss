@@ -433,7 +433,7 @@
             padding: 0 0 21px;
             max-width: calc(100% - 36px);
             margin: auto;
-            align-items: unset;
+            align-items: center;
             text-align: center;
             height: 400px;
             
@@ -518,4 +518,8 @@
     .assetButton {
         display: unset;
     }
+    .imageContainer {
+        align-items: unset;
+    }
+    
 }
