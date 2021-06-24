@@ -77,11 +77,11 @@
 
     .imageContainer {
         width: 100%;
-        height: 65vh;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        text-align: right;
+        text-align: center;
         margin-right: 76.5px;
         // display: flex;
         // justify-content: center;
@@ -205,7 +205,7 @@
     }
 
     .details {
-        max-width: 420px;
+        // max-width: 420px;
     }
 
     .auction {
@@ -243,7 +243,7 @@
     .right {
         max-width: 100%;
         width: 625.6px;
-        padding: 20px;
+        // padding: 20px;
 
         .centerItem {
             text-align: center;
@@ -433,9 +433,9 @@
             padding: 0 0 21px;
             max-width: calc(100% - 36px);
             margin: auto;
-            align-items: unset;
+            align-items: center;
             text-align: center;
-            height: 400px;
+            // height: 400px;
             
             .singleAssetModel {
                 width: 100%;
@@ -455,7 +455,7 @@
 
         .details {
             text-align: center;
-            max-width: calc(100% - 36px);
+            max-width: calc(100% - 10px);
             margin: auto;
         }
 
