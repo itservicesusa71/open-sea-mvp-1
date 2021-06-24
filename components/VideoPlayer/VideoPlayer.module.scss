@@ -1,11 +1,20 @@
+@import "../../styles/mixins.scss";
+
 .container {
     video {
         max-width: 600px;
-        padding-left: 100px;
-        padding-right: 100px;
     }
 
     .display {
         pointer-events: none;
+    }
+}
+@include media-small-mobile-only {
+    .container {
+        video {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+    
     }
 }
