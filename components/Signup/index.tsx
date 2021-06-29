@@ -25,6 +25,7 @@ const Signup = (): JSX.Element => {
             <button onClick={handleMetamask} type="submit">
                 {loading ? "Loading" : "Log in"}
             </button>
+            <h2>Log in with WalletConnect (all mobile users)</h2>
             <button onClick={handleWalletConnect} type="submit">
                 {loading ? "Loading" : "Log in with WalletConnect"}
             </button>

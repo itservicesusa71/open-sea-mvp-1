@@ -1,5 +1,6 @@
 import { utils } from "ethers";
 import Link from "next/link";
+import moment from "moment";
 import { NFTFile, OrderFromAPI } from "../../types";
 import VideoPlayer from "../VideoPlayer";
 import styles from "./AssetOnSale.module.scss";
@@ -64,9 +65,11 @@ const AssetOnSale: React.FC<{
                         <div className={styles.ends}>
                             <h3>Auction Ends at</h3>
                             <p>
-                                {salesOrder?.listing_time && onSale ? (
+                                {salesOrder?.closing_date && onSale ? (
                                     <Countdown
-                                        date={salesOrder?.listing_time * 1000}
+                                        date={moment(
+                                            `${salesOrder?.closing_date}Z`,
+                                        ).valueOf()}
                                     />
                                 ) : (
                                     "---"

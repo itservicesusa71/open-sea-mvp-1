@@ -19,6 +19,7 @@
             object-fit: cover;
             width: 100%;
             height: 100%;
+            max-height: calc(100vh - 89.5px - 79px - 186px - 60px);
             position: absolute;
             top: 0;
             left: 0;

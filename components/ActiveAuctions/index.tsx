@@ -12,17 +12,14 @@ const Auctions: React.FC<{
     const enrichedAssets = useEnrichedAssetsData(assets);
     return (
         <main className={styles.auctions}>
-            {/* <div className={styles.headline}>
+            <div className={styles.headline}>
                 <div className={styles.title}>
                     <img alt="Live Auctions" src="/images/Auctions.png" />
                 </div>
                 <div className={styles.divider}>
                     <hr />
                 </div>
-                <div className={styles.rightLink}>
-                    {link && <Link href={link}>View All</Link>}
-                </div>
-            </div> */}
+            </div>
             <div className={styles.auctionsContainer}>
                 {enrichedAssets.map(
                     ({
@@ -40,8 +37,6 @@ const Auctions: React.FC<{
                         tokenId,
                         salesOrder,
                         currentBid,
-                        iconUrl,
-                        iconURLSold
                     }) => (
                         <>
                             <AssetOnSale
@@ -60,12 +55,13 @@ const Auctions: React.FC<{
                                 file={file}
                                 salesOrder={salesOrder}
                                 currentBid={currentBid}
-                                iconUrl={iconUrl}
-                                iconURLSold={iconURLSold}
                             />
                         </>
                     ),
                 )}
+            </div>
+            <div className={styles.pageLink}>
+                {link && <Link href={link}>View All Artwork</Link>}
             </div>
         </main>
     );

@@ -17,7 +17,8 @@ const BuyWidget: React.FC<{
     buyOrders: OrderFromAPI[];
     sellOrders: Order[];
     handleClose: () => void;
-}> = ({ address, tokenId, buyOrders, sellOrders, handleClose }) => {
+    reserve: string;
+}> = ({ address, tokenId, buyOrders, sellOrders, handleClose, reserve }) => {
     const user = useUser();
     const { weth: wethBalance } = useBalances();
 
@@ -32,11 +33,12 @@ const BuyWidget: React.FC<{
     useEffect(() => {
         const findMax = () => {
             const max = findMaxBid(buyOrders);
-            setAmount(String(max));
+            const reservePrice = reserve ? Number(reserve) : 0;
+            setAmount(String(Math.max(reservePrice, max)));
         };
 
         findMax();
-    }, [buyOrders, sellOrders]);
+    }, [buyOrders, sellOrders, reserve]);
 
     // Convert input to BN so we can use with Ethers
     const BNAmount = useMemo(() => fromStringToBN(amount, 18), [amount]);
@@ -89,6 +91,7 @@ const BuyWidget: React.FC<{
                 <input
                     type="number"
                     step="0.001"
+                    min={reserve}
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                 />

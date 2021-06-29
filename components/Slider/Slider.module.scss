@@ -1,21 +1,26 @@
 @import "../../styles//mixins.scss";
 .sliderContainer {
-    margin: 0 60px 46px;
+    margin: 0 60px;
 }
 .slider {
     position: relative;
 
-    height: 282px;
-
+    // height: 282px;
+    .sliderImage {
+        width: 100%;
+    }
     .bg {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-size: cover;
+        text-align: center;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 }
+
 .sliderContent {
     display: flex;
     background-color: rgba(0, 0, 0, 0.6);
@@ -65,6 +70,9 @@
 }
 
 @include media-mobile-only {
+    .sliderImage {
+        padding: 0 20px;
+    }
     .sliderContainer {
         margin: 0;
     }

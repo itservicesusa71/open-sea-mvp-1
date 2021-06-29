@@ -40,6 +40,7 @@
         }
 
         .goBack {
+            position: absolute;
             background: none;
             border: none;
             margin-left: 60px;
@@ -67,8 +68,8 @@
         align-items: center;
 
         .image {
-            background: #fff;
-            padding: 18px;
+            // background: #fff;
+            // padding: 18px;
             text-align: center;
             box-sizing: content-box;
             margin: auto;
@@ -80,12 +81,16 @@
                 // 79 186 padding top and bottom
                 // 73 padding top container below - 13 px = 60
                 height: calc(100vh - 89.5px - 79px - 186px - 60px);
+                max-height: calc(100vh - 89.5px - 79px - 186px - 60px);
             }
-
+            .ReactPlayer {
+                height: unset !important;
+            }
             &.active {
                 img,
                 video {
                     height: calc(75vh);
+                    max-height: calc(75vh);
                 }
             }
         }

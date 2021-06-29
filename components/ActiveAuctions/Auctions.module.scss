@@ -5,6 +5,15 @@
     margin: auto;
     padding: 0 60px;
 
+    .pageLink {
+        text-align: center;
+    
+        margin: 46px 18px 42px 2px;
+        a {
+            margin: 0 40px;
+        }
+    }
+
     @media screen and (max-width: 778px) {
         max-width: 100%;
         padding: 0 18px;
@@ -82,7 +91,7 @@
 
 @include media-mobile-only {
     .auctions {
-        padding: 30px 15px;
+        padding: 15px 15px;
         margin: auto;
         box-sizing: content-box;
         .title {

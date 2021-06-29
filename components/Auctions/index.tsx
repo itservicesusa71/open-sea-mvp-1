@@ -28,7 +28,7 @@ const Auctions: React.FC<{
                 <div className={styles.divider}>
                     <hr />
                 </div>
-                <div className={styles.rightLink}>
+                {/* <div className={styles.rightLink}>
                     {link && <Link href={link}>View All</Link>}
                 </div> */}
             </div>
