@@ -94,7 +94,7 @@ const AssetOnSale: React.FC<{
                             {sold && (
                                 <div>
                                     <h4>Sold for</h4>{" "}
-                                    <h3>{utils.formatEther(soldFor)}</h3>
+                                    <h3>{soldFor}</h3>
                                 </div>
                             )}
                         </div>
