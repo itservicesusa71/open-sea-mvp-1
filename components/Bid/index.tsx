@@ -1,8 +1,7 @@
 import { utils } from "ethers";
-import moment from "moment";
 import React from "react";
 import { useProfiles } from "../../context/SiteProfilesContext";
-import { OrderFromAPI, Profile } from "../../types";
+import { Profile } from "../../types";
 import styles from "./Bid.module.scss";
 
 /**
@@ -18,23 +17,23 @@ const getUserName = (address: string, profiles: Profile[]): string => {
     return found ? found.username : String(address).substring(0, 6);
 };
 
-const Bid: React.FC<{ buyOrder: OrderFromAPI }> = ({ buyOrder }) => {
-    const date = moment(
-        Number(buyOrder.listing_time.toString()) * 1000,
-    ).toISOString();
+const Bid: React.FC<{ buyOrder }> = ({ buyOrder }) => {
+    const date = buyOrder.created_date;
     const profiles = useProfiles();
     return (
         <div className={styles.bid}>
             <div>
                 <p className={styles.bidder}>
                     Bid Placed by{" "}
-                    {getUserName(buyOrder.maker.address, profiles)}
+                    { buyOrder.from_account.user?buyOrder.from_account.user.username: getUserName(buyOrder.from_account.address, profiles)}
                 </p>
                 <p className={styles.date}>at {date}</p>
             </div>
 
             <p className={styles.price}>
+
                 {buyOrder.base_price.toString()} ETH
+
             </p>
         </div>
     );
