@@ -10,11 +10,12 @@ const Auctions: React.FC<{ collections: CollectionInterface[] }> = ({
             <h1 className={styles.title}>Collections</h1>
             <div className={styles.collectionsContainer}>
                 {collections.map(
-                    ({ artist, assets, imageUrl, name, slug, id }) => (
+                    ({ artist, assets, imageUrl, iconURLSold, name, slug, id }) => (
                         <Collection
                             key={name}
                             slug={slug}
                             imageUrl={imageUrl}
+                            iconURLSold={iconURLSold}
                             name={name}
                             assets={assets}
                             artist={artist}

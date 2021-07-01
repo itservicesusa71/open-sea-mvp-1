@@ -8,10 +8,8 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\start",
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ]
+
+            "program": "${workspaceFolder}\\start"
         }
     ]
 }

@@ -12,6 +12,7 @@ const SettingsPage: React.FC = () => {
     const profile = useProfile();
     const setProfile = useSetProfile();
     const [newName, setNewName] = useState("");
+    const [newEmail, setNewEmail] = useState("");
     const [loading, setLoading] = useState(false);
 
     const allowance = useAllowance();
@@ -19,7 +20,7 @@ const SettingsPage: React.FC = () => {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        await setProfile(newName);
+        await setProfile(newName, newEmail);
         setLoading(false);
     };
 
@@ -49,7 +50,7 @@ const SettingsPage: React.FC = () => {
 
             <div className={styles.tiny}>
                 {allowance
-                    ? "You've given approval for Chain/Saw to connect to your wallet"
+                    ? "You've given approval for PEGZ to connect to your wallet"
                     : "You need to give allowance"}
             </div>
 

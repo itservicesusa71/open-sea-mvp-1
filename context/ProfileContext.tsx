@@ -13,16 +13,17 @@ interface Profile {
     id: string;
     username: string;
     address: string;
+    email: string;
 }
 
 type ProfileContextData = {
     profile: Profile | null;
-    setProfile: (newName: string) => void;
+    setProfile: (newName: string, newEmail: string) => void;
 };
 
 const ProfileContext = createContext<ProfileContextData>({
     profile: null,
-    setProfile: (newName: string) => null,
+    setProfile: (newName: string, newEmail: string) => null,
 });
 export default ProfileContext;
 
@@ -57,7 +58,7 @@ export const ProfileContextProvider: React.FC = ({ children }) => {
      * Update the profile via API and internally
      */
     const updateProfile = useCallback(
-        async (newName: string): Promise<void> => {
+        async (newName: string, newEmail: string): Promise<void> => {
             try {
                 const token = await getToken(
                     user.provider.getSigner(),
@@ -74,6 +75,7 @@ export const ProfileContextProvider: React.FC = ({ children }) => {
                         },
                         body: JSON.stringify({
                             username: newName,
+                            email: newEmail,
                             address: user.address,
                         }),
                     });
@@ -86,6 +88,7 @@ export const ProfileContextProvider: React.FC = ({ children }) => {
                         },
                         body: JSON.stringify({
                             username: newName,
+                            email: newEmail,
                             address: user.address,
                         }),
                     });
