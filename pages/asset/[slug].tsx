@@ -52,7 +52,7 @@ const OrderModal: React.FC<{
 
 const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
 
-    // console.log(asset, "asset")
+    console.log(asset, "asset")
 
     const [showPdfModal, setShowPdfModal] = useState(false);
     const user = useUser();
@@ -322,7 +322,7 @@ export default SingleAssetPage;
 export async function getStaticPaths() {
     const tokenRes = await fetch(`${API_URL}/tokens?_limit=-1`);
     const tokens = await tokenRes.json();
-
+    console.log(tokens, "tokens")
     return {
         paths: tokens.map((asset) => ({
             params: { slug: asset.slug },
@@ -334,6 +334,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const tokenRes = await fetch(`${API_URL}/tokens?slug=${params.slug}`);
     const tokens = await tokenRes.json();
+    console.log(tokens, "tokens1")
     const found = tokens[0];
     return {
         props: {
