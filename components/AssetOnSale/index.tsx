@@ -41,7 +41,7 @@ const AssetOnSale: React.FC<{
 }) => {
     
     return (
-        <Link href={`/asset/video/peg-101`}>
+        <Link href={`/asset/video/${slug}`}>
             <a>
                 <div className={styles.asset}>
                     <div className={styles.imageContainer}>

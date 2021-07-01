@@ -96,7 +96,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                     <div className={styles.masthead}>
                         <div className={styles.assetMastHead}>
                             <div className={styles.imageContainer}>
-                                <VideoPlayer playbackId="5StzfTfn17t900FFYJ2dkVRw6or2uLLVXe40223XeSFNA" display />
+                                <VideoPlayer playbackId={asset?.file?.link} display />
                                 <a type="button" className = {styles.assetButton} >
                                     <p className={styles.singleAssetText}>{asset.name}</p>
                                     <img className={styles.singleAssetImage} src={asset.iconUrl} />
