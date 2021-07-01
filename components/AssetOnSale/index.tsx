@@ -55,7 +55,6 @@ const AssetOnSale: React.FC<{
                     </div>
                     <div className={styles.info}>
                         <div className={styles.name}>
-                            {/* <h2>{artist}</h2> */}
                             <p>
                                 <img className={styles.nftIcon} src={iconUrl ?? iconURLSold} />
                             </p>
