@@ -58,7 +58,7 @@ export interface NFT extends OpenSeaAsset {
     name: string;
     address: string;
     tokenId: string;
-
+    etherscan: string;
     slug: string;
     reserve: string;
 

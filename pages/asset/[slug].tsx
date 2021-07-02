@@ -283,7 +283,13 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 )}
                             </>
                         )}
-
+                        <div className="">
+                            <h3>
+                                <a href={asset.etherscan} target="_blank" rel="nofollow noreferrer">
+                                    View on IPFS
+                                </a>
+                            </h3>
+                        </div>
                         {modalOpen && (
                             <OrderModal
                                 buyOrders={assetData?.orders || []}
