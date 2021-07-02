@@ -19,9 +19,6 @@ const Auctions: React.FC<{
                 <div className={styles.divider}>
                     <hr />
                 </div>
-                {/* <div className={styles.rightLink}>
-                    {link && <Link href={link}>View All</Link>}
-                </div> */}
             </div>
             <div className={styles.auctionsContainer}>
                 {enrichedAssets.map(
@@ -40,6 +37,8 @@ const Auctions: React.FC<{
                         tokenId,
                         salesOrder,
                         currentBid,
+                        iconUrl,
+                        iconURLSold
                     }) => (
                         <>
                             <AssetOnSale
@@ -58,6 +57,8 @@ const Auctions: React.FC<{
                                 file={file}
                                 salesOrder={salesOrder}
                                 currentBid={currentBid}
+                                iconUrl={iconUrl}
+                                iconURLSold={iconURLSold}
                             />
                         </>
                     ),

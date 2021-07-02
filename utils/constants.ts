@@ -11,16 +11,15 @@ export const TOKENS_IN_HOME = 40;
 export const SOLD_TOKENS_IN_HOME = 18;
 export const UPCOMING_TOKENS_IN_HOME = 8;
 export const WHITEHOT_TOKENS_IN_HOME = 16;
+export const CRYPTOPUNK_TOKENS_IN_HOME = 16;
+export const AMALGAM_TOKENS_IN_HOME = 16;
 
 export const TOKENS_PER_PAGE = 40;
 export const ARTISTS_PER_PAGE = 40;
 
-export const UPCOMING_TOKENS_QUERY =
-    "onSale=false&sold=false&_sort=priority:DESC";
-
-export const AVAILABLE_TOKENS_QUERY =
-    "onSale=true&sold=false&_sort=priority:DESC";
-
+export const UPCOMING_TOKENS_QUERY = "onSale=false&sold=false&_sort=priority:DESC";
+export const AVAILABLE_TOKENS_QUERY = "onSale=true&sold=false&_sort=priority:DESC";
 export const SOLD_TOKENS_QUERY = "sold=true&_sort=priority:DESC";
-
 export const WHITEHOT_TOKENS_QUERY = "whitehot=true&_sort=priority:DESC";
+export const CRYPTOPUNK_TOKENS_QUERY = "whitehot=true&_sort=priority:DESC";
+export const AMALGAM_TOKENS_QUERY = "whitehot=true&_sort=priority:DESC";

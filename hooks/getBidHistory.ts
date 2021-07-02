@@ -14,6 +14,7 @@ const getBidHistory = (address: string, tokenId: string) => {
             );
             const data = await res.json();
             setAsset(data);
+            console.log(data, "bid history")
         } catch (err) {
             console.log("Exception in fetch asset", err);
         }
