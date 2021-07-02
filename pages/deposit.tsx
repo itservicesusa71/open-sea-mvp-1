@@ -25,7 +25,7 @@ const DepositETH: React.FC = () => {
             <h2>Deposit ETH / WETH</h2>
             {allowance && (
                 <p>
-                    NOTE: You have given Chain/Saw approval to use your wallet.
+                    NOTE: You have given PEGZ approval to use your wallet.
                     Now you can convert some of your ETH balance to WETH for
                     bidding
                 </p>

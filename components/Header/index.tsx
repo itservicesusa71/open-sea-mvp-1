@@ -6,9 +6,9 @@ import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
     return (
-        <header>
+        <header className={styles.mainHeader}>
             <div className={styles.header}>
-                <div className={styles.left}>
+                {/* <div className={styles.left}>
                     <div>
                         <Link href="/">
                             <a>
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
                             <img src="/logos/twitter.png" alt="discord" />
                         </a>
                     </div>
-                </div>
+                </div> */}
                 <div className={styles.right}>
                     <div>
                         <UserSignup />
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
                                     <a>About</a>
                                 </Link>
                             </div>
-                            <div>
+                            {/* <div>
                                 <Link href="/artists">
                                     <a>Artists</a>
                                 </Link>
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
                                 <Link href="/conversations">
                                     <a>Conversations</a>
                                 </Link>
-                            </div>
+                            </div> */}
                             <div>
                                 <Link href="/faq">
                                     <a>FAQ</a>
@@ -65,14 +65,14 @@ const Header: React.FC = () => {
                             </div>
                         </div>
                         <div className={styles.social}>
-                            <a href="https://www.instagram.com/chainsaw_nft">
-                                <img src="/logos/instagram.png" alt="discord" />
+                            <a href="https://www.instagram.com/pegzpegzpegz">
+                                <img src="/logos/instagram.png" alt="ig" />
                             </a>
                             <a href="https://discord.com/invite/aXQqKxKggh">
                                 <img src="/logos/discord.png" alt="discord" />
                             </a>
-                            <a href="https://twitter.com/ChainSawNFT">
-                                <img src="/logos/twitter.png" alt="discord" />
+                            <a href="https://twitter.com/Matt_Furie">
+                                <img src="/logos/twitter.png" alt="twitter" />
                             </a>
                         </div>
                     </div>

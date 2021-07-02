@@ -22,7 +22,7 @@ const Bid: React.FC<{ buyOrder }> = ({ buyOrder }) => {
     const profiles = useProfiles();
     return (
         <div className={styles.bid}>
-            <div>
+            <div className={styles.biderInfo}>
                 <p className={styles.bidder}>
                     Bid Placed by{" "}
                     { buyOrder.from_account.user?buyOrder.from_account.user.username: getUserName(buyOrder.from_account.address, profiles)}

@@ -22,7 +22,7 @@ const Auctions: React.FC<{
     return (
         <main className={styles.auctions}>
             <div className={styles.headline}>
-                <div className={styles.title}>
+                {/* <div className={styles.title}>
                     <img alt="Live Auctions" src={fromTitleToImageUrl(title)} />
                 </div>
                 <div className={styles.divider}>
@@ -45,6 +45,8 @@ const Auctions: React.FC<{
                         file,
                         sold,
                         soldFor,
+                        iconUrl,
+                        iconURLSold
                     }) => (
                         <>
                             <Asset
@@ -59,6 +61,8 @@ const Auctions: React.FC<{
                                 name={name}
                                 reserve={reserve}
                                 file={file}
+                                iconUrl={iconUrl}
+                                iconURLSold={iconURLSold}
                             />
                         </>
                     ),

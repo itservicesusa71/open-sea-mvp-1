@@ -8,7 +8,7 @@ export const FaqPage: React.FC<{ faq: Faq[] }> = ({ faq }) => {
     return (
         <div className={styles.faq}>
             <Head>
-                <title>Chainsaw NFT</title>
+                <title>PEGZ</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <h1>Frequently Asked Questions</h1>

@@ -37,9 +37,12 @@ const AssetOnSale: React.FC<{
     soldFor,
     salesOrder,
     currentBid,
+    iconUrl,
+    iconURLSold
 }) => {
+    
     return (
-        <Link href={`/asset/${slug}`}>
+        <Link href={`/asset/video/${slug}`}>
             <a>
                 <div className={styles.asset}>
                     <div className={styles.imageContainer}>
@@ -52,7 +55,9 @@ const AssetOnSale: React.FC<{
                     </div>
                     <div className={styles.info}>
                         <div className={styles.name}>
-                            <h2>{artist}</h2>
+                            <p>
+                                <img className={styles.nftIcon} src={iconUrl ?? iconURLSold} />
+                            </p>
                             <h3>{name}</h3>
                         </div>
 
@@ -72,7 +77,7 @@ const AssetOnSale: React.FC<{
                         </div>
 
                         <div className={styles.footer}>
-                            {onSale && !sold && (
+                            {/* {onSale && !sold && (
                                 <div className={styles.buyButton}>
                                     <div>
                                         <button>Bid Now</button>
@@ -84,9 +89,9 @@ const AssetOnSale: React.FC<{
                                         </div>
                                     )}
                                 </div>
-                            )}
+                            )} */}
 
-                            {!onSale && (
+                            {(!onSale && sold) && (
                                 <div className={styles.notAvail}>
                                     <h3>Price</h3>
                                     <h2>---</h2>
