@@ -188,6 +188,17 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                         </div>
                     )}
 
+                    {(asset.etherscan && asset.cryptopunk3100) && (
+                        <div className="">
+                            <h3>
+                                <a href={asset.etherscan} target="_blank" rel="nofollow noreferrer">
+                                    View on Etherscan
+                                </a>
+                            </h3>
+                            <br />
+                        </div>
+                    )}
+
                     <h2>
                         {asset?.artist?.name ? (
                             <Link href={`/artist/${asset.artist.slug}`}>
@@ -282,17 +293,6 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                             </>
                         )}
                         
-                        {(asset.etherscan && asset.cryptopunk3100) && (
-                            <div className="">
-                                <h3>
-                                    <a href={asset.etherscan} target="_blank" rel="nofollow noreferrer">
-                                        View on Etherscan
-                                    </a>
-                                </h3>
-                                <br />
-                            </div>
-                        )}
-
                         {modalOpen && (
                             <OrderModal
                                 buyOrders={assetData?.orders || []}
