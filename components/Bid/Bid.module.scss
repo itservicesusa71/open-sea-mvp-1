@@ -6,38 +6,47 @@
     border-radius: 5px;
     margin-bottom: 10px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #d5d5d5;
 
     &:first-of-type {
         border-top: 1px solid #d5d5d5;
     }
+    
+    .biderInfo {
+        // float: left;
+        word-break: break-word;
+        
+        .bidder {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
 
-    .bidder {
-        font-size: 16px;
-        margin-bottom: 10px;
+        .date {
+            font-size: 14px;
+        }
     }
-
+    
     .price {
+        // float: right;
         font-size: 22px;
         white-space: nowrap;
         flex: 1;
         text-align: right;
     }
 
-    .date {
-        font-size: 14px;
-    }
 }
 
 @include media-mobile-only {
     .bid {
         background: #eee;
-        div,
-        p {
-            flex: 1;
-            white-space: nowrap;
-        }
+
+        // div,
+        // p {
+        //     flex: 1;
+        //     white-space: nowrap;
+        // }
 
         .price {
             text-align: right;

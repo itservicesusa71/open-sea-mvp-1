@@ -11,7 +11,7 @@ export const CollectionsHome: React.FC<{ collections: Collection[] }> = ({
     return (
         <div className={styles.container}>
             <Head>
-                <title>Chainsaw NFT</title>
+                <title>PEGZ</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 

@@ -6,7 +6,7 @@ const Header: React.FC = () => (
         <div className={styles.header}>
             <Link href="/">
                 <a>
-                    <img src="/images/logo.png" alt="Chainsaw" />
+                    <img src="/images/logo.png" alt="PegzFun" />
                 </a>
             </Link>
         </div>

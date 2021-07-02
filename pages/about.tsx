@@ -3,47 +3,33 @@ import styles from "../styles/About.module.scss";
 const AboutPage: React.FC = () => (
     <div className={styles.container}>
         <div className={styles.left}>
-            <img src="/images/about.png" alt="About chainsaw" />
+            <img src="/images/pegz/pegz.jpg" alt="About Pegz" />
         </div>
         <div className={styles.right}>
             <h2>About</h2>
             <div>
                 <p>
-                    Chain/Saw is a space for artists and collectors to both
-                    create and experiment with a new digital art paradigm,
-                </p>
-                <p> and ultimately shape it. </p>
-                <p>- </p>
-                <p> </p>
-                <p>
-                    As an NFT marketplace, Chain/Saw presents a curated
-                    selection of visionary projects that call into
+                PEGZ is a series of 100 unique collectables, each one of a kind and drawn digitally by Matt Furie. Every Peg character is a member of a family, one of 10 types, including "Pepe" who is present here in the rarest of forms. 
                 </p>
                 <p>
-                    question what blockchain art can be. Chain/Saw was founded
-                    by Frank Musarra, an artist, musician, and
+                Matt's vast world of characters come to life in the form of collectable/tradable files, each with a 2D avatar .PNG file, a 3D .GLB coin file, and an animated .GIF file. 
                 </p>
                 <p>
-                    creative technologist deeply embedded at the intersection of
-                    art and technology. The project arose
+                The PEGZ project came about as Matt focused on digitally created work, and provides a unique opportunity for collectors to get into his vast universe of bizarre mutants and characters, the same universe that single-handledly spawned the most iconic internet creature of all time, Pepe the Frog.
                 </p>
                 <p>
-                    through conversations with peers who shared a common
-                    curiosity with this emergent space, though with
+                    -
+                </p>
+                <p> 
+                Welcome to pegz.fun! I've been mining my brains out to bring you these seeds of the metaverse. May the faces of these new mutants bring you joy, good luck, and good fortune from the digital dreamscape.
                 </p>
                 <p>
-                    this curiosity comes trepidation — what does the future of
-                    NFT art look like? What are the implications of
+                Peace, Love Unity, Respect,
                 </p>
                 <p>
-                    this movement for “legacy” art worlds? Chain/Saw was founded
-                    to further the challenging conversation
+                Matt Furie    
                 </p>
-                <p>
-                    surrounding the future of digital art, engaging a community
-                    of artists, inspired collectors, and curious
-                </p>
-                <p>audiences alike.</p>
+
             </div>
         </div>
     </div>

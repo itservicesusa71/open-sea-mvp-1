@@ -15,6 +15,8 @@ const Asset: React.FC<{
     file?: NFTFile;
     sold?: boolean;
     soldFor: string;
+    iconUrl: string;
+    iconURLSold: string;
 }> = ({
     imageUrl,
     name,
@@ -25,8 +27,10 @@ const Asset: React.FC<{
     file,
     sold,
     soldFor,
+    iconUrl,
+    iconURLSold
 }) => (
-    <Link href={`/asset/${slug}`}>
+    <Link href={`/asset/video/${slug}`}>
         <a>
             <div className={styles.asset}>
                 <div className={styles.imageContainer}>
@@ -39,7 +43,12 @@ const Asset: React.FC<{
                 </div>
                 <div className={styles.info}>
                     <div className={styles.name}>
-                        <h2>{artist}</h2>
+                        {/* <h2>{artist}</h2>
+                        <h3>{name}</h3> */}
+                        <div className={styles.centerItem}>
+                            <img className={styles.nftIcon} src={iconUrl??iconURLSold} />
+                            {/* <img src={'/images/pegz/'+fff+'.png'} /> */}
+                        </div>
                         <h3>{name}</h3>
                     </div>
                     <div className={styles.footer}>
@@ -58,7 +67,7 @@ const Asset: React.FC<{
 
                         {reserve && !sold && (
                             <div>
-                                <h4>Reserve price:</h4> <h3>{reserve} ETH</h3>
+                                {/* <h4>Reserve price:</h4> <h3>{reserve} ETH</h3> */}
                             </div>
                         )}
                     </div>
