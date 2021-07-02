@@ -55,36 +55,3 @@ export async function getStaticProps() {
         },
     };
 }
-
-const earningsInBnb = earningsInDollars/bnbPrice
-
-earningsInBnb is called to display information
-
-const earningsInDollars = tikiVolume == 0 ?
-(holdings/1000000000)220000 : (holdings/1000000000)(tikiVolume*0.11)
-
-tikiVolume you get from props
-
-This gets the volume
-
-async function getTikiVolume() {
-const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=tiki-token&vs_currencies=usd&include_market_cap=false&include_24hr_vol=true&include_24hr_change=false&include_last_updated_at=false')
-const resolved = await res.json()
-const volume = resolved['tiki-token'].usd_24h_vol
-return volume
-}
-
-currently since we do not have a contract, leave it as it is
-
-however
-
-to display "EARNINGS"
-
-call 'earningsInBnb'
-
-
-For example,
-
-<p className="text-green-400 dark:text-green-400 text-2xl text-center"><span className="text-yellow-300">{numberWithCommas(earningsInBnb.toFixed(2))} BNB</span> (${numberWithCommas((earningsInDollars).toFixed(2))})</p><span className="text-gray-600 dark:text-gray-400 text-xl text-center ml-2 mt-2">Per Day</span>
-
-This will display "EarningsinBNB" (in yellow) BNB (in green) perday (in gray)
