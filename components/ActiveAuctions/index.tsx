@@ -37,6 +37,8 @@ const Auctions: React.FC<{
                         tokenId,
                         salesOrder,
                         currentBid,
+                        iconUrl,
+                        iconURLSold
                     }) => (
                         <>
                             <AssetOnSale
@@ -55,6 +57,8 @@ const Auctions: React.FC<{
                                 file={file}
                                 salesOrder={salesOrder}
                                 currentBid={currentBid}
+                                iconUrl={iconUrl}
+                                iconURLSold={iconURLSold}
                             />
                         </>
                     ),

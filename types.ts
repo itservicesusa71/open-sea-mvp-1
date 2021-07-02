@@ -55,7 +55,6 @@ export interface NFTFile {
 export interface NFT extends OpenSeaAsset {
     description: string;
     imageUrl: string;
-    iconUrl: string;
     IPFS: string;
     IPFSMetadata: string;
     Etherscan: string;
@@ -63,6 +62,8 @@ export interface NFT extends OpenSeaAsset {
     name: string;
     address: string;
     tokenId: string;
+
+    iconUrl: string;
     iconURLSold: string;
 
     slug: string;

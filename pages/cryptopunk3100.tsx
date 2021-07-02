@@ -3,10 +3,10 @@ import Link from "next/link";
 import styles from "../styles/Index.module.scss";
 import {
     API_URL,
-    WHITEHOT_TOKENS_QUERY,
+    CRYPTOPUNK_TOKENS_QUERY,
+    CRYPTOPUNK_TOKENS_IN_HOME,
     SOLD_TOKENS_IN_HOME,
     SOLD_TOKENS_QUERY,
-    WHITEHOT_TOKENS_IN_HOME,
     UPCOMING_TOKENS_QUERY,
     UPCOMING_TOKENS_IN_HOME,
 } from "../utils/constants";
@@ -45,7 +45,7 @@ export default Home;
 export async function getStaticProps() {
     /** Get tokens with auctions */
     const whtieTokenRes = await fetch(
-        `${API_URL}/tokens?_limit=${WHITEHOT_TOKENS_IN_HOME}&${WHITEHOT_TOKENS_QUERY}`,
+        `${API_URL}/tokens?_limit=${CRYPTOPUNK_TOKENS_IN_HOME}&${CRYPTOPUNK_TOKENS_QUERY}`,
     );
     const whiteTokens = await whtieTokenRes.json();
     

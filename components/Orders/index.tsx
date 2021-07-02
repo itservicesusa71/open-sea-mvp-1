@@ -9,6 +9,7 @@ const Orders: React.FC<{
 }> = ({ asset }) => {
     var address = (asset)?asset.asset_contract.address:"";
     var token_id = (asset)?asset.token_id:"";
+    
     const { bidHistory: assetData, fetchAsset } = getBidHistory(
         address,
         token_id,
