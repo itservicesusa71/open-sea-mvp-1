@@ -23,3 +23,6 @@ export const SOLD_TOKENS_QUERY = "sold=true&_sort=priority:DESC";
 export const WHITEHOT_TOKENS_QUERY = "whitehot=true&_sort=priority:DESC";
 export const CRYPTOPUNK_TOKENS_QUERY = "whitehot=true&_sort=priority:DESC";
 export const AMALGAM_TOKENS_QUERY = "whitehot=true&_sort=priority:DESC";
+
+export const WHITEHOT_TEXT_TITLE = "Whitehot Magazine NFT Auction";
+export const WHITEHOT_TEXT_OWNER = "Curated by Noah Becker";

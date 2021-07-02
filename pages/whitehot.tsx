@@ -9,6 +9,8 @@ import {
     WHITEHOT_TOKENS_IN_HOME,
     UPCOMING_TOKENS_QUERY,
     UPCOMING_TOKENS_IN_HOME,
+    WHITEHOT_TEXT_TITLE,
+    WHITEHOT_TEXT_OWNER
 } from "../utils/constants";
 import { NFT, Slide } from "../types";
 import Auctions from "../components/Auctions";
@@ -29,8 +31,8 @@ export const Home: React.FC<{
             {/* <Slider slides={slides} /> */}
             <div className={styles.centerItem}>
                 <h2>&nbsp;</h2>
-                <h2>Whitehot Magazine NFT Auction</h2>
-                <h2>Curated by Noah Becker</h2>
+                <h2>{WHITEHOT_TEXT_TITLE}</h2>
+                <h2>{WHITEHOT_TEXT_OWNER}</h2>
             </div>
             {(assets?.length > 0) && (
                 <Auctions assets={assets} title="Auctions" link="/whitehot/0" />
