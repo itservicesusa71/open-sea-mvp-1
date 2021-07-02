@@ -5,6 +5,9 @@ import {
     API_URL,
     AMALGAM_TOKENS_QUERY,
     AMALGAM_TOKENS_IN_HOME,
+    AMALGAM_TEXT_TITLE,
+    AMALGAM_TEXT_OWNER,
+
     SOLD_TOKENS_IN_HOME,
     SOLD_TOKENS_QUERY,
     UPCOMING_TOKENS_QUERY,
@@ -29,8 +32,8 @@ export const Home: React.FC<{
             {/* <Slider slides={slides} /> */}
             <div className={styles.centerItem}>
                 <h2>&nbsp;</h2>
-                <h2>Whitehot Magazine NFT Auction</h2>
-                <h2>Curated by Noah Becker</h2>
+                <h2>{AMALGAM_TEXT_TITLE}</h2>
+                <h2>{AMALGAM_TEXT_OWNER}</h2>
             </div>
             {(assets?.length > 0) && (
                 <Auctions assets={assets} title="Auctions" link="/whitehot/0" />
