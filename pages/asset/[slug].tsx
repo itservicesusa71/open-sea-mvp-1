@@ -52,8 +52,6 @@ const OrderModal: React.FC<{
 
 const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
 
-    console.log(asset, "asset")
-
     const [showPdfModal, setShowPdfModal] = useState(false);
     const user = useUser();
     const { asset: assetData, fetchAsset } = useAsset(
@@ -283,13 +281,18 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 )}
                             </>
                         )}
-                        <div className="">
-                            <h3>
-                                <a href={asset.etherscan} target="_blank" rel="nofollow noreferrer">
-                                    View on IPFS
-                                </a>
-                            </h3>
-                        </div>
+                        
+                        {(asset.etherscan && asset.cryptopunk3100) && (
+                            <div className="">
+                                <h3>
+                                    <a href={asset.etherscan} target="_blank" rel="nofollow noreferrer">
+                                        View on Etherscan
+                                    </a>
+                                </h3>
+                                <br />
+                            </div>
+                        )}
+
                         {modalOpen && (
                             <OrderModal
                                 buyOrders={assetData?.orders || []}
