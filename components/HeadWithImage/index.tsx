@@ -13,7 +13,7 @@ const HeadWithImage: React.FC<{
             <meta charSet="utf-8" />
             <meta
                 name="description"
-                content={description || "The Curated #NFT Marketplace"}
+                content={description || "The Artist-first, Curated #NFT Marketplace"}
             />
             <meta
                 name="viewport"
@@ -25,7 +25,7 @@ const HeadWithImage: React.FC<{
             <meta property="og:title" content={title || "Chainsaw"} />
             <meta
                 property="og:description"
-                content={description || "The Curated #NFT Marketplace"}
+                content={description || "The Artist-first, Curated #NFT Marketplace"}
             />
             <meta property="og:image" content={imageUrl || defaultImg} />
             <meta name="twitter:image:src" content={imageUrl || defaultImg} />

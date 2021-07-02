@@ -27,8 +27,8 @@ export const AMALGAM_TOKENS_QUERY = "amalgamation=true&_sort=priority:DESC";
 export const WHITEHOT_TEXT_TITLE = "Whitehot Magazine NFT Auction";
 export const WHITEHOT_TEXT_OWNER = "Curated by Noah Becker";
 
-export const CRYPTOPUNK_TEXT_TITLE = "CRYPTOPUNK Magazine NFT Auction";
-export const CRYPTOPUNK_TEXT_OWNER = "Curated by Noah Becker";
+export const CRYPTOPUNK_TEXT_TITLE = "The CryptoPunk #3100 Collection";
+export const CRYPTOPUNK_TEXT_OWNER = "Curated by Ryder Ripps";
 
 export const AMALGAM_TEXT_TITLE = "AMALGAM Magazine NFT Auction";
 export const AMALGAM_TEXT_OWNER = "Curated by Noah Becker";
