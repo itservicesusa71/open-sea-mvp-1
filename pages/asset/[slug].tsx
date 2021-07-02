@@ -52,8 +52,6 @@ const OrderModal: React.FC<{
 
 const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
 
-    console.log(asset, "asset")
-
     const [showPdfModal, setShowPdfModal] = useState(false);
     const user = useUser();
     const { asset: assetData, fetchAsset } = useAsset(

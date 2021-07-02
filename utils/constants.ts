@@ -21,8 +21,8 @@ export const UPCOMING_TOKENS_QUERY = "onSale=false&sold=false&_sort=priority:DES
 export const AVAILABLE_TOKENS_QUERY = "onSale=true&sold=false&_sort=priority:DESC";
 export const SOLD_TOKENS_QUERY = "sold=true&_sort=priority:DESC";
 export const WHITEHOT_TOKENS_QUERY = "whitehot=true&_sort=priority:DESC";
-export const CRYPTOPUNK_TOKENS_QUERY = "whitehot=true&_sort=priority:DESC";
-export const AMALGAM_TOKENS_QUERY = "whitehot=true&_sort=priority:DESC";
+export const CRYPTOPUNK_TOKENS_QUERY = "cryptopunk3100=true&_sort=priority:DESC";
+export const AMALGAM_TOKENS_QUERY = "amalgamation=true&_sort=priority:DESC";
 
 export const WHITEHOT_TEXT_TITLE = "Whitehot Magazine NFT Auction";
 export const WHITEHOT_TEXT_OWNER = "Curated by Noah Becker";
