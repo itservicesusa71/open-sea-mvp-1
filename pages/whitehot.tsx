@@ -35,7 +35,6 @@ export const Home: React.FC<{
             {(assets?.length > 0) && (
                 <Auctions assets={assets} title="Auctions" link="/whitehot/0" />
             )}
-            
         </div>
     );
 };
