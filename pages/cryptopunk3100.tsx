@@ -27,7 +27,7 @@ export const Home: React.FC<{
                 <title>Chainsaw NFT</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <HeadWithImage />
+            <HeadWithImage imageUrl='https://chainsawimg.s3.us-east-2.amazonaws.com/ryderripps/punkpreview.png'/>
             {/* <Slider slides={slides} /> */}
             <div className={styles.centerItem}>
                 <h2>&nbsp;</h2>
