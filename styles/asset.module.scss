@@ -81,7 +81,7 @@
                 // 79 186 padding top and bottom
                 // 73 padding top container below - 13 px = 60
                 height: calc(100vh - 89.5px - 79px - 186px - 60px);
-                max-height: calc(100vh - 89.5px - 79px - 186px - 60px);
+                max-height: calc(100vh - 89.5px - 79px);
             }
             .ReactPlayer {
                 height: unset !important;
@@ -262,7 +262,7 @@
     .imageContainer {
         img {
             height: unset !important;
-            width: 100%;
+            // width: 100%;
         }
     }
     .singleAsset {
@@ -272,7 +272,7 @@
 
         .assetMastHead {
             padding-top: 38px;
-            padding-bottom: 53px;
+            padding-bottom: 38px;
             margin-bottom: 0;
 
             .goBack {
@@ -317,7 +317,7 @@
         }
 
         .imageContainer {
-            padding: 0 0 21px;
+            // padding: 0 0 21px;
             max-width: calc(100% - 36px);
             margin: auto;
             align-items: unset;
