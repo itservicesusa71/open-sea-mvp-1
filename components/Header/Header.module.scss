@@ -73,14 +73,14 @@
         }
 
         .headerContent {
-            width: 100%;
+            width: 30%;
             .links {
                 color: black;
                 width: 100%;
                 justify-content: space-between;
 
                 div {
-                    // margin-right: 40px;
+                    margin-right: 40px;
                 }
             }
             .links {
@@ -134,6 +134,11 @@
                 }
             }
         }
+        .right {
+            .headerContent {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -158,6 +163,10 @@
 
             .social {
                 display: none;
+            }
+            
+            .headerContent {
+                width: 100%;
             }
         }
     }
