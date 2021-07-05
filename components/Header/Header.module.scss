@@ -58,8 +58,10 @@
     }
 
     .right {
+        width: 100%;
         display: flex;
         align-items: center;
+
 
         div {
             display: flex;
@@ -70,28 +72,33 @@
             width: 120px;
         }
 
-        .links {
-            color: black;
-            div {
-                margin-right: 40px;
-            }
-        }
-
-        .links {
-            div {
-                text-align: right;
-            }
-
-            a {
-                display: inline-block;
+        .headerContent {
+            width: 100%;
+            .links {
                 color: black;
-                padding: 2px;
-                font-size: 16px;
-                text-decoration: none;
-                font-weight: medium;
+                width: 100%;
+                justify-content: space-between;
 
-                &:hover {
-                    @include underlineOnHover;
+                div {
+                    // margin-right: 40px;
+                }
+            }
+            .links {
+                div {
+                    text-align: right;
+                }
+
+                a {
+                    display: inline-block;
+                    color: black;
+                    padding: 2px;
+                    font-size: 16px;
+                    text-decoration: none;
+                    font-weight: medium;
+
+                    &:hover {
+                        @include underlineOnHover;
+                    }
                 }
             }
         }

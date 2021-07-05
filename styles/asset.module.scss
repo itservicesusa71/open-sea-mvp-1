@@ -73,6 +73,8 @@
             text-align: center;
             box-sizing: content-box;
             margin: auto;
+            display: block;
+            width: 100%;
 
             img,
             video {
@@ -82,6 +84,7 @@
                 // 73 padding top container below - 13 px = 60
                 height: calc(100vh - 89.5px - 79px - 186px - 60px);
                 max-height: calc(100vh - 89.5px - 79px);
+                // width: 100%;
             }
             .ReactPlayer {
                 height: unset !important;
@@ -262,7 +265,7 @@
     .imageContainer {
         img {
             height: unset !important;
-            // width: 100%;
+            width: 100%;
         }
     }
     .singleAsset {

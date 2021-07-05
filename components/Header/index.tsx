@@ -41,7 +41,7 @@ const Header: React.FC = () => {
                     <div>
                         <UserSignup />
                     </div>
-                    <div>
+                    <div className={styles.headerContent}>
                         <div className={styles.links}>
                             <div>
                                 <Link href="/about">
