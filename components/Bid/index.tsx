@@ -32,7 +32,7 @@ const Bid: React.FC<{ buyOrder }> = ({ buyOrder }) => {
 
             <p className={styles.price}>
 
-                {buyOrder.base_price.toString()} ETH
+                {buyOrder.base_price} ETH
 
             </p>
         </div>
