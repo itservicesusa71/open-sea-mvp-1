@@ -7,12 +7,15 @@ import getBidHistory from "../../hooks/getBidHistory";
 const Orders: React.FC<{
     asset: AssetFromAPI;
 }> = ({ asset }) => {
-    var address = (asset)?asset.asset_contract.address:"";
+    console.log(asset, "asset check")
+    var address = (asset)? asset.asset_contract.address:"";
     var token_id = (asset)?asset.token_id:"";
+
     const { bidHistory: assetData, fetchAsset } = getBidHistory(
         address,
         token_id,
     );
+    
     var bid_list = assetData?assetData.asset_events:[];
     if(bid_list == undefined)
         bid_list = [];

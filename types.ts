@@ -38,6 +38,7 @@ export interface AssetFromAPI {
     };
     sell_orders: OrderFromAPI[];
     top_bid: OrderFromAPI;
+    success: boolean;
 }
 
 export type BuyOrder = Order;

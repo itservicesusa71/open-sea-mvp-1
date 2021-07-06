@@ -30,5 +30,5 @@ export const WHITEHOT_TEXT_OWNER = "Curated by Noah Becker";
 export const CRYPTOPUNK_TEXT_TITLE = "The CryptoPunk #3100 Collection";
 export const CRYPTOPUNK_TEXT_OWNER = "By Ryder Ripps";
 
-export const AMALGAM_TEXT_TITLE = "AMALGAM Magazine NFT Auction";
-export const AMALGAM_TEXT_OWNER = "Curated by Noah Becker";
+export const AMALGAM_TEXT_TITLE = "AMALGAMATION";
+export const AMALGAM_TEXT_OWNER = "Curated by Accelerate Art & Whitehot Magazine";
