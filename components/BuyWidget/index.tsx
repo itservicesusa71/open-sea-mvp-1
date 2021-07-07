@@ -75,6 +75,7 @@ const BuyWidget: React.FC<{
                     "Success! The order went through! It takes up to 1 minute for the order to show",
             });
         } catch (err) {
+            console.log("err", err)
             setResult({
                 error: true,
                 message: err.message ? err.message.toString() : err.toString(),
