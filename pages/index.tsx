@@ -36,13 +36,6 @@ export const Home: React.FC<{
             {sold?.length > 2 && (
                 <Auctions assets={sold} title="Sold" link="/sold/0" />
             )}
-            {/* {upcoming?.length > 0 && (
-                <Auctions
-                    assets={upcoming}
-                    title="Upcoming"
-                    link="/upcoming/0"
-                />
-            )} */}
         </div>
     );
 };
