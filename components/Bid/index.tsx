@@ -20,6 +20,7 @@ const getUserName = (address: string, profiles: Profile[]): string => {
 const Bid: React.FC<{ buyOrder }> = ({ buyOrder }) => {
     const date = buyOrder.created_date;
     const profiles = useProfiles();
+    
     return (
         <div className={styles.bid}>
             <div>
@@ -31,9 +32,7 @@ const Bid: React.FC<{ buyOrder }> = ({ buyOrder }) => {
             </div>
 
             <p className={styles.price}>
-
-                {buyOrder.base_price} ETH
-
+                {utils.formatEther(buyOrder.bid_amount.toString())} ETH
             </p>
         </div>
     );

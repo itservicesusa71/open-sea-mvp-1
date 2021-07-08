@@ -211,8 +211,8 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                         )}{" "}
                     </h2>
                     <div className={styles.relatedGrid}>
-                        {related.map((token) => (
-                            <div className={styles.relatedEntry}>
+                        {related.map((token, index) => (
+                            <div className={styles.relatedEntry} key={index}>
                                 <Link href={`/asset/${token.slug}`}>
                                     <a>
                                         <img
