@@ -71,6 +71,10 @@ export interface NFT extends OpenSeaAsset {
         slug: string;
         imageUrl: string;
     };
+    
+    asset_contract: {
+        asset_contract_type: string;
+    }
 
     sold: boolean;
     soldFor: string;
