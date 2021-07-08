@@ -16,6 +16,7 @@ const useAsset = (address: string, tokenId: string) => {
             );
             const data = await res.json();
             setAsset(data);
+            
         } catch (err) {
             console.log("Exception in fetch asset", err);
         }

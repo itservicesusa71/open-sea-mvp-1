@@ -36,8 +36,9 @@ const OrderModal: React.FC<{
     buyOrders: OrderFromAPI[];
     address: string;
     tokenId: string;
+    asset_contract_type: string;
     reserve: string;
-}> = ({ handleClose, buyOrders, address, tokenId, reserve }) => (
+}> = ({ handleClose, buyOrders, address, tokenId, reserve, asset_contract_type }) => (
     <Modal handleClose={handleClose}>
         <BuyWidgetNoSsr
             handleClose={handleClose}
@@ -45,6 +46,7 @@ const OrderModal: React.FC<{
             sellOrders={[]}
             address={address}
             tokenId={tokenId}
+            asset_contract_type={asset_contract_type}
             reserve={reserve}
         />
     </Modal>
@@ -71,7 +73,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
     const maxBid = findMaxBid(assetData?.orders);
     const currentBid = maxBid >= Number(asset.reserve) ? maxBid : 0;
     const owner = useOwner(assetData);
-
+    const asset_contract_type = assetData?.asset_contract?.asset_contract_type;
     const router = useRouter();
 
     const handle = useFullScreenHandle();
@@ -302,6 +304,7 @@ const SingleAssetPage: React.FC<{ asset: NFT }> = ({ asset }) => {
                                 }}
                                 address={asset.address}
                                 tokenId={asset.tokenId}
+                                asset_contract_type={asset_contract_type}
                                 reserve={asset.reserve}
                             />
                         )}
@@ -345,6 +348,7 @@ export async function getStaticProps({ params }) {
     const tokens = await tokenRes.json();
     
     const found = tokens[0];
+    
     return {
         props: {
             asset: found,

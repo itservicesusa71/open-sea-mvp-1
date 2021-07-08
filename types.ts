@@ -62,6 +62,7 @@ export interface NFT extends OpenSeaAsset {
     etherscan: string;
     slug: string;
     reserve: string;
+    asset_contract_type: string;
     cryptopunk3100: boolean;
     
     artist: {

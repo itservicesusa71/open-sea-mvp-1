@@ -14,11 +14,17 @@ import { OrderFromAPI } from "../../types";
 const BuyWidget: React.FC<{
     address: string;
     tokenId: string;
+    asset_contract_type: string;
     buyOrders: OrderFromAPI[];
     sellOrders: Order[];
     handleClose: () => void;
     reserve: string;
-}> = ({ address, tokenId, buyOrders, sellOrders, handleClose, reserve }) => {
+}> = ({ address, tokenId, buyOrders, asset_contract_type, sellOrders, handleClose, reserve }) => {
+    
+    let assetContractType = "ERC721"
+    if(asset_contract_type == "semi-fungible")
+        assetContractType = "ERC1155"
+
     const user = useUser();
     const { weth: wethBalance } = useBalances();
 
@@ -65,7 +71,7 @@ const BuyWidget: React.FC<{
                 user.seaport,
                 address,
                 tokenId,
-                "ERC721", // TODO: Make this change dynamically based on type of token
+                assetContractType, // TODO: Make this change dynamically based on type of token
                 user.address,
                 parseFloat(amount || "0"),
             );
@@ -75,7 +81,6 @@ const BuyWidget: React.FC<{
                     "Success! The order went through! It takes up to 1 minute for the order to show",
             });
         } catch (err) {
-            console.log("err", err)
             setResult({
                 error: true,
                 message: err.message ? err.message.toString() : err.toString(),

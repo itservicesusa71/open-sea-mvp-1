@@ -50,16 +50,13 @@ const useEnrichedAssetsData = (assets: NFT[]) => {
     useEffect(() => {
         const fetchAsset = async () => {
             const allPossibilities = formatTokens(assets);
-            console.log("allPossibilities", allPossibilities);
             const addresses = Object.keys(allPossibilities);
-            console.log("addresses", addresses);
             try {
                 let enrichedAssets = [] as AssetFromAPI[];
 
                 await Promise.all(
                     addresses.map(async (tokenAddress) => {
                         if(tokenAddress != "null") {
-                            console.log(tokenAddress, "token address list")
                             const fromThisBatch = await tokensFromOpenSea(
                                 tokenAddress,
                                 allPossibilities[tokenAddress],
@@ -69,15 +66,11 @@ const useEnrichedAssetsData = (assets: NFT[]) => {
                     }),
                 );
 
-                console.log("enrichedAssets", enrichedAssets);
-
                 const mergedAssets = assets.map((token) => {
                     // Find order // Find amx bid
-                    // console.log(token.address, "token.address")
                     let token_address = token.address;
                     if(token.address == null)
                         token_address = "token.address"
-
                     try {
                             const assetData = enrichedAssets.find(
                                 (asset) =>
@@ -85,8 +78,6 @@ const useEnrichedAssetsData = (assets: NFT[]) => {
                                         asset.asset_contract.address.toLowerCase() &&
                                     token.tokenId === asset.token_id,
                             );
-
-                            // console.log("assetData", assetData);
 
                             const salesOrder = assetData?.sell_orders?.[0];
                             const currentBid = findMaxBid([assetData?.top_bid]);
