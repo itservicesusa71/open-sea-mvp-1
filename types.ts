@@ -35,6 +35,7 @@ export interface AssetFromAPI {
     token_id: string;
     asset_contract: {
         address: string;
+        asset_contract_type: string
     };
     sell_orders: OrderFromAPI[];
     top_bid: OrderFromAPI;
